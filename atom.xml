@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[My Notes]]></title>
+  
+  <link href="//atom.xml" rel="self"/>
+  <link href="http://notes.lixuan.xyz/"/>
+  <updated>2015-08-28T08:29:55.670Z</updated>
+  <id>http://notes.lixuan.xyz/</id>
+  
+  <author>
+    <name><![CDATA[李宣]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GitHub入门]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/28/GitHub%E5%85%A5%E9%97%A8/"/>
+    <id>http://notes.lixuan.xyz/2015/08/28/GitHub入门/</id>
+    <published>2015-08-28T08:28:35.000Z</published>
+    <updated>2015-08-28T08:29:55.670Z</updated>
+    <content type="html"><![CDATA[<h2 id="帮助">帮助</h2><ul>
+<li><a href="https://help.github.com/" target="_blank" rel="external">Git 帮助</a></li>
+<li><a href="https://guides.github.com/" target="_blank" rel="external">Git 向导</a></li>
+<li><a href="https://training.github.com/" target="_blank" rel="external">Git 训练</a></li>
+<li><a href="https://try.github.io/levels/1/challenges/1" target="_blank" rel="external">花15分钟模拟学习 Git</a></li>
+</ul>
+<h2 id="书籍">书籍</h2><ul>
+<li><a href="http://git-scm.com/book/zh/v1" target="_blank" rel="external">Pro Git 中文书</a></li>
+<li><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" target="_blank" rel="external">Git 英文备忘单</a></li>
+<li><a href="https://training.github.com/kit/downloads/cn/github-git-cheat-sheet.html" target="_blank" rel="external">Git 中文备忘单</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="帮助">帮助</h2><ul>
+<li><a href="https://help.github.com/" target="_blank" rel="external">Git 帮助</a></li>
+<li><a href="https://guides.gi]]>
+    </summary>
+    
+      <category term="Git,GitHub" scheme="http://notes.lixuan.xyz/tags/Git-GitHub/"/>
+    
+      <category term="工具" scheme="http://notes.lixuan.xyz/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[临时收藏的网站]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/20/%E4%B8%B4%E6%97%B6%E6%94%B6%E8%97%8F%E7%9A%84%E7%BD%91%E7%AB%99/"/>
+    <id>http://notes.lixuan.xyz/2015/08/20/临时收藏的网站/</id>
+    <published>2015-08-20T11:05:37.000Z</published>
+    <updated>2015-09-10T03:42:22.633Z</updated>
+    <content type="html"><![CDATA[<h1 id="计算机">计算机</h1><ul>
+<li><a href="https://highlightjs.org/" target="_blank" rel="external">HighLightJS－代码高亮</a></li>
+<li><a href="http://pandoc.org/" target="_blank" rel="external">Pandoc</a></li>
+<li><a href="http://sageworld.com/" target="_blank" rel="external">SageOnLine</a></li>
+<li><a href="http://markdownpad.com/" target="_blank" rel="external">MarkDownPad</a></li>
+<li><a href="http://pad.haroopress.com/" target="_blank" rel="external">Haroopad</a></li>
+<li><a href="http://www.imdb.com/" target="_blank" rel="external">互联网电影数据库</a></li>
+<li><a href="http://segmentfault.com/a/1190000002632530?_ea=274797" target="_blank" rel="external">Hexo 常用命令</a></li>
+<li><a href="https://shadowsocks.com/" target="_blank" rel="external">shadowsocks</a></li>
+<li><a href="http://www.ffvps.com/" target="_blank" rel="external">迷雾</a></li>
+<li><a href="http://www.flygo.net/" target="_blank" rel="external">飞扬围棋</a></li>
+<li><a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank" rel="external">知识图标库</a></li>
+<li><a href="http://www.ithome.com/html/win10/164896.htm" target="_blank" rel="external">从Win1.0到Win10看三十年的界面变化</a></li>
+<li><a href="http://www.ithome.com/html/win10/163188.htm" target="_blank" rel="external">免费用正版Win10完全攻略</a></li>
+</ul>
+<h1 id="数学">数学</h1><ul>
+<li><a href="http://www.mcescher.com/" target="_blank" rel="external">M.C.Escher 数学逻辑等图片收藏</a></li>
+<li><a href="http://www.matrix67.com/blog/archives/5070" target="_blank" rel="external">趣题：证明所有乘积的总和与分拆的方式无关</a></li>
+<li><a href="http://www.math.org.cn/forum.php?mod=viewthread&amp;tid=33039&amp;extra=&amp;page=1" target="_blank" rel="external">Python 绘制 Poincare 双曲铺砌</a></li>
+<li><a href="http://jpkc.nwpu.edu.cn/jp2007/08/content/begin.htm" target="_blank" rel="external">西北工业大学《矩阵论》</a></li>
+</ul>
+<h1 id="娱乐">娱乐</h1><ul>
+<li><a href="http://movie.douban.com/people/mackalex/collect?start=15&amp;sort=time&amp;rating=all&amp;tag=%E8%87%AA%E7%84%B6&amp;mode=grid&amp;filter=all" target="_blank" rel="external">Mark看过的电影－豆瓣</a></li>
+<li><a href="http://zhao.juji123.com/" target="_blank" rel="external">随便找－电影</a></li>
+<li><a href="http://emuch.net/bbs/viewthread.php?tid=8937450&amp;fpage=1&amp;target=blank" target="_blank" rel="external">谈谈自己对读博的一点感想——你为什么读博？你适合读博吗？</a></li>
+</ul>
+<h1 id="WIKI">WIKI</h1><ul>
+<li><a href="http://blog.csdn.net/sahusoft/article/details/6384058" target="_blank" rel="external">九大PHP开源Wiki(维基百科)程序评测</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Wiki%E8%BD%AF%E4%BB%B6%E6%AF%94%E8%BE%83" target="_blank" rel="external">Wiki软件比较</a></li>
+<li><a href="https://www.mediawiki.org/wiki/MediaWiki" target="_blank" rel="external">Media wiki 官网</a></li>
+<li><a href="https://sites.google.com/site/tiddlywikizh/Home/guide" target="_blank" rel="external">TiddlyWiki 華語邦</a></li>
+<li><a href="https://www.dokuwiki.org/start?id=zh:dokuwiki" target="_blank" rel="external">DokuWiki</a></li>
+</ul>
+<h1 id="在线电子书">在线电子书</h1><h3 id="处世三大奇书">处世三大奇书</h3><ul>
+<li><a href="http://www.theqi.com/buddhism/tsai1.html" target="_blank" rel="external">菜根谭（上）</a></li>
+<li><a href="http://www.theqi.com/buddhism/tsai2.html" target="_blank" rel="external">菜根谭（下）</a></li>
+<li><a href="http://tw.epochtimes.com/b5/1/9/5/c5100.htm" target="_blank" rel="external">围炉夜话</a></li>
+<li><a href="http://www.my285.com/gdwx/sw/xcyj/" target="_blank" rel="external">小窗幽记（原名：醉古堂剑扫）</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="计算机">计算机</h1><ul>
+<li><a href="https://highlightjs.org/" target="_blank" rel="external">HighLightJS－代码高亮</a></li>
+<li><a href="http:]]>
+    </summary>
+    
+      <category term="临时" scheme="http://notes.lixuan.xyz/tags/%E4%B8%B4%E6%97%B6/"/>
+    
+      <category term="收藏" scheme="http://notes.lixuan.xyz/tags/%E6%94%B6%E8%97%8F/"/>
+    
+      <category term="网站" scheme="http://notes.lixuan.xyz/tags/%E7%BD%91%E7%AB%99/"/>
+    
+      <category term="临时" scheme="http://notes.lixuan.xyz/categories/%E4%B8%B4%E6%97%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[小工具]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/20/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
+    <id>http://notes.lixuan.xyz/2015/08/20/小工具/</id>
+    <published>2015-08-20T07:54:48.000Z</published>
+    <updated>2015-08-27T08:14:52.185Z</updated>
+    <content type="html"><![CDATA[<h1 id="CSS工具">CSS工具</h1><h2 id="变换时间函数cubic-bezier实时预览">变换时间函数<code>cubic-bezier</code>实时预览</h2><p>在 CSS3 中的过渡效果，有属性 transition-timing-function ，可用来控制变化速度。</p>
+<ul>
+<li><a href="http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp" target="_blank" rel="external">变换时间函数的参数设置</a></li>
+<li><a href="http://cubic-bezier.com/" target="_blank" rel="external">cubic-bezier实时预览</a></li>
+</ul>
+<h1 id="字体工具">字体工具</h1><h2 id="在线工具">在线工具</h2><ul>
+<li><a href="https://icomoon.io/app" target="_blank" rel="external"><strong>Ico Moon</strong>（图标转字体）</a></li>
+<li><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" rel="external"><strong>Fort Awesome</strong>（网络图标字体）</a>（<a href="http://www.bootcss.com/p/font-awesome/" target="_blank" rel="external">中文版</a>）</li>
+<li><a href="http://www.fontsquirrel.com/tools/webfont-generator" target="_blank" rel="external"><strong>Font Squirrel</strong>（字体转换，可以指定部分字符）</a></li>
+<li><a href="https://onlinefontconverter.com/" target="_blank" rel="external"><strong>Online Font Converter</strong></a></li>
+<li><a href="https://www.google.com/fonts" target="_blank" rel="external"><strong>Google Fonts</strong></a></li>
+</ul>
+<h2 id="本地工具">本地工具</h2><ul>
+<li><a href="http://fontforge.github.io/" target="_blank" rel="external"><strong>Font Forge</strong>（开源字体编辑软件）</a></li>
+</ul>
+<h2 id="一些不错的字体网站">一些不错的字体网站</h2><ul>
+<li><a href="http://www.youziku.com/" target="_blank" rel="external">有字库</a></li>
+<li><a href="http://makefont.com/" target="_blank" rel="external">造字工房</a></li>
+<li><a href="http://font.sentywed.com/" target="_blank" rel="external">新蒂字体</a></li>
+</ul>
+<h1 id="Chrome_浏览器扩展程序">Chrome 浏览器扩展程序</h1><ul>
+<li><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external"><strong>Adblock Plus</strong>（去广告）</a>| <a href="https://adblockplus.org/" target="_blank" rel="external">官网</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external"><strong>feeder</strong>（RSS订阅）</a>| <a href="http://feeder.co/" target="_blank" rel="external">官网</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/crxmouse-chrome-gestures/jlgkpaicikihijadgifklkbpdajbkhjo?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external"><strong>crxMouse Chrome Gestures</strong>（鼠标手势）</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf" target="_blank" rel="external"><strong>Fatkun图片批量下载</strong></a></li>
+<li><a href="https://chrome.google.com/webstore/category/apps" target="_blank" rel="external"><strong>SwitchyOmega</strong>（代理管理工具）</a><a href="https://github.com/FelisCatus/SwitchyOmega" target="_blank" rel="external">源代码：GitHub</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="CSS工具">CSS工具</h1><h2 id="变换时间函数cubic-bezier实时预览">变换时间函数<code>cubic-bezier</code>实时预览</h2><p>在 CSS3 中的过渡效果，有属性 transition-timing-func]]>
+    </summary>
+    
+      <category term="CSS工具" scheme="http://notes.lixuan.xyz/tags/CSS%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="字体工具" scheme="http://notes.lixuan.xyz/tags/%E5%AD%97%E4%BD%93%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="字典工具" scheme="http://notes.lixuan.xyz/tags/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="工具" scheme="http://notes.lixuan.xyz/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="工具" scheme="http://notes.lixuan.xyz/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[冷知识]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/18/%E5%86%B7%E7%9F%A5%E8%AF%86/"/>
+    <id>http://notes.lixuan.xyz/2015/08/18/冷知识/</id>
+    <published>2015-08-18T10:35:48.000Z</published>
+    <updated>2015-08-18T10:43:04.241Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BD%97%E8%9C%9C" target="_blank" rel="external"><strong>菠萝蜜</strong></a> 是世界上最大的水果，只有大象会整个吞食</li>
+</ul>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/UVB-76" target="_blank" rel="external">俄罗斯电台：<strong>UVB-76</strong></a></li>
+</ul>
+<blockquote>
+<p><strong>UVB-76</strong>是俄罗斯一个位于4625 kHz（单边带）的神秘电台，收音机爱好者将其称为The Buzzer。它每天24小时发送向外发送单调的声音，每分钟重复约25次。UVB-76电台于1982年首次被观察到，在少数情况下持续的嗡嗡声会中断，并出现由俄语播出的语音信息。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BD%97%E8%9C%9C" target="_blank" rel="external"><strong>菠萝蜜</strong></a> 是世界上最大的]]>
+    </summary>
+    
+      <category term="冷知识" scheme="http://notes.lixuan.xyz/tags/%E5%86%B7%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="常识" scheme="http://notes.lixuan.xyz/categories/%E5%B8%B8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于Markdown]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/18/%E5%85%B3%E4%BA%8EMarkdown/"/>
+    <id>http://notes.lixuan.xyz/2015/08/18/关于Markdown/</id>
+    <published>2015-08-18T09:38:43.000Z</published>
+    <updated>2015-09-23T14:15:14.094Z</updated>
+    <content type="html"><![CDATA[<h1 id="语法">语法</h1><p>参见：</p>
+<ul>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版) </a></li>
+<li><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="external">GitHub：Mastering Markdown</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">维基百科：Markdown</a></li>
+<li><a href="http://www.jianshu.com/p/1e402922ee32#" target="_blank" rel="external">简书：Markdown——入门指南</a></li>
+</ul>
+<h1 id="注意事项">注意事项</h1><h2 id="转义字符">转义字符</h2><ul>
+<li>链接中包含<strong> 圆括号</strong>时，用<strong>%28</strong>和<strong>%29</strong>替代，实际上只替换右圆括号即可</li>
+<li><p>数学公式中，有花括号<strong><em>{</em></strong>时，一般需要放在下面标记中</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">% raw %&#125;</span></span><br><span class="line">...</span><br><span class="line">&#123;<span class="comment">% endraw %&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另外，如果Hexo解析出错时，也许是由于下面的转义字符</p>
+</li>
+</ul>
+<h3 id="转义字符列表">转义字符列表</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">字符</th>
+<th style="text-align:left">名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">反斜线</td>
+</tr>
+<tr>
+<td style="text-align:left">`</td>
+<td style="text-align:left">反引号</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">星号</td>
+</tr>
+<tr>
+<td style="text-align:left">_</td>
+<td style="text-align:left">底线</td>
+</tr>
+<tr>
+<td style="text-align:left">{}</td>
+<td style="text-align:left">花括号</td>
+</tr>
+<tr>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">方括号</td>
+</tr>
+<tr>
+<td style="text-align:left">()</td>
+<td style="text-align:left">括弧</td>
+</tr>
+<tr>
+<td style="text-align:left">#</td>
+<td style="text-align:left">井字号</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">加号</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">减号</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">英文句点</td>
+</tr>
+<tr>
+<td style="text-align:left">!</td>
+<td style="text-align:left">惊叹号</td>
+</tr>
+</tbody>
+</table>
+<h1 id="工具">工具</h1><h2 id="本地工具">本地工具</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">工具</th>
+<th style="text-align:left">简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/elerao/Smark" target="_blank" rel="external"><strong>Smark</strong></a></td>
+<td style="text-align:left">本地编辑工具，可导出多种格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://pad.haroopress.com/" target="_blank" rel="external"><strong>Haroopad</strong></a></td>
+<td style="text-align:left">本地编辑工具，可导出：HTML</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://markdownpad.com/" target="_blank" rel="external"><strong>MarkDownPad</strong></a></td>
+<td style="text-align:left">本地编辑工具，可导出：HTML，PDF</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://pandoc.org/" target="_blank" rel="external"><strong>Pandoc</strong></a></td>
+<td style="text-align:left">本地格式转换工具，支持好多好多种文件格式的互转</td>
+</tr>
+</tbody>
+</table>
+<h2 id="在线工具">在线工具</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">工具</th>
+<th style="text-align:left">简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.zybuluo.com" target="_blank" rel="external"><strong>作业部落</strong></a></td>
+<td style="text-align:left">本地编辑工具，可导出：HTML</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://maxiang.info/" target="_blank" rel="external"><strong>马克飞象</strong></a></td>
+<td style="text-align:left">本地编辑工具，可导出：HTML，PDF</td>
+</tr>
+</tbody>
+</table>
+<h1 id="推荐三款Wiki程序">推荐三款Wiki程序</h1><table>
+<thead>
+<tr>
+<th style="text-align:left">程序</th>
+<th style="text-align:left">简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://tiddlywiki.com/" target="_blank" rel="external"><strong>TiddlyWiki</strong></a></td>
+<td style="text-align:left">本地+在线，适合个人使用，可导出：HTML，JSON，CSV，.tid</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.mediawiki.org" target="_blank" rel="external"><strong>MediaWiki</strong></a></td>
+<td style="text-align:left">合适做 Wiki 网站</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.dokuwiki.org" target="_blank" rel="external"><strong>DokuWiki</strong></a></td>
+<td style="text-align:left">合适做 Wiki 网站</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="语法">语法</h1><p>参见：</p>
+<ul>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版) </a></l]]>
+    </summary>
+    
+      <category term="Markdown" scheme="http://notes.lixuan.xyz/tags/Markdown/"/>
+    
+      <category term="排版" scheme="http://notes.lixuan.xyz/tags/%E6%8E%92%E7%89%88/"/>
+    
+      <category term="排版" scheme="http://notes.lixuan.xyz/categories/%E6%8E%92%E7%89%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[冷门定理]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/18/%E5%86%B7%E9%97%A8%E5%AE%9A%E7%90%86/"/>
+    <id>http://notes.lixuan.xyz/2015/08/18/冷门定理/</id>
+    <published>2015-08-18T09:20:13.000Z</published>
+    <updated>2015-09-23T13:53:18.501Z</updated>
+    <content type="html"><![CDATA[<h1 id="博弈论">博弈论</h1><h2 id="策梅洛定理_(博弈论)"><a href="https://zh.wikipedia.org/wiki/%E7%AD%96%E6%A2%85%E6%B4%9B%E5%AE%9A%E7%90%86_%28%E5%8D%9A%E5%BC%88%E8%AB%96%29" target="_blank" rel="external">策梅洛定理 (博弈论)</a></h2><blockquote>
+<p>策梅洛定理（英语：Zermelo’s theorem）是博弈论的一条定理，以恩斯特·策梅洛命名。定理表示在二人的有限游戏中，如果双方皆拥有完全的资讯，并且运气因素并不牵涉在游戏中，那先行或后行者当一必有一方有必胜/必不败的策略。若运用至国际象棋，则策梅洛定理表示“要么黑方有必胜之策略、要么白方有必胜之策略、要么双方也有必不败之策略”。</p>
+<p>策梅洛的论文于1913年以德文发表，并被Ulrich Schwalbe和Paul Walker于1997年译为英文。</p>
+</blockquote>
+<h1 id="统计">统计</h1><h2 id="本福特定律（Benford’s_law）"><a href="https://en.wikipedia.org/wiki/Benford%27s_law" target="_blank" rel="external">本福特定律（Benford’s law）</a></h2><h3 id="定律">定律</h3><p>在$n$进制数中，如果一组数据的首位数字$d$的出现概率为<br>
+$$\operatorname{P}\left( d \right)={{\log }_{n}}\left( d+1 \right)-{{\log }_{n}}\left( d \right)={{\log }_{n}}\left( 1+\frac{1}{d} \right)$$
+<br>则称这组数据满足本福特定律。</p>
+<center><img src="BenfordLow.png" alt=""></center>
+
+<h3 id="理解">理解</h3><p>这组数据肯定不是随机产生的，不然，首位数字应该服从均匀分布。注意到在公式中出现了对数函数，那么这组数据的产生过程应该和对数有关，实际上是对数函数的反函数——指数函数。<br>根据上面的公式，在满足本福特定律的一组数据中，首位数字小于等于$d$的概率为<br>
+$${{p}_{d}}:=\operatorname{P}\left( \delta \le d \right)={{\log }_{n}}\left( d+1 \right)$$
+<br>即$d={{n}^{{{p}_{d}}}}-1$，从形式上可以推测：这组数据应该是由指数增长得到的。证明：<a href="http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1042&amp;context=rgp_rsr" target="_blank" rel="external">A Statistical Derivation of the Significant-Digit Law (PDF)</a>。</p>
+<h3 id="描述">描述</h3><p>本福特定律，也称为本福特法则，说明一堆从实际生活得出的数据中，以1为首位数字的数的出现机率约为总数的三成，接近期望值1/9的3倍。推广来说，越大的数，以它为首几位的数出现的机率就越低。它可用于检查各种数据是否有造假。</p>
+<h3 id="历史">历史</h3><ul>
+<li>1881年，天文学家西蒙·纽康发现对数表包含以1起首的数那首几页较其他页破烂。可是，亦可以以任何书起首数页也会较破烂这个观点解释。这个故事可能是虚构的。</li>
+<li>1938年，物理学家法蘭克·本福特重新发现这个现象，还通过了检查许多数据来证实这点。</li>
+<li>2009年，西班牙数学家在素数中发现了一种新模式，并且惊讶于为何现在才为人发现。虽然素数一般被认为是随机分布的，但西班牙数学家发现素数数列中每个素数的首位数字有明显的分布规律，它可以被描述了素数的本福特定律。这项新发现除了提供对素数属性的新洞见之外，还能应用于欺骗检测和股票市场分析等领域。</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="博弈论">博弈论</h1><h2 id="策梅洛定理_(博弈论)"><a href="https://zh.wikipedia.org/wiki/%E7%AD%96%E6%A2%85%E6%B4%9B%E5%AE%9A%E7%90%86_%28%E5%8D%9A%]]>
+    </summary>
+    
+      <category term="博弈" scheme="http://notes.lixuan.xyz/tags/%E5%8D%9A%E5%BC%88/"/>
+    
+      <category term="定理" scheme="http://notes.lixuan.xyz/tags/%E5%AE%9A%E7%90%86/"/>
+    
+      <category term="公式定理" scheme="http://notes.lixuan.xyz/categories/%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[特殊函数]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/16/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/"/>
+    <id>http://notes.lixuan.xyz/2015/08/16/特殊函数/</id>
+    <published>2015-08-16T04:24:55.000Z</published>
+    <updated>2015-08-16T13:22:31.502Z</updated>
+    <content type="html"><![CDATA[<h1 id="特殊函数">特殊函数</h1><h2 id="狄拉克$\delta_$函数（Dirac_Delta_Function）">狄拉克$\delta $函数（Dirac Delta Function）</h2><p>$\text{ }\!\!\delta\!\!\text{ }$函数定义在$\mathbb{R}$上，又称：单位脉冲函数，满足：$\text{ }\!\!\delta\!\!\text{ }\left( x \right)=\left\{ \begin{align}<br>  &amp; +\infty ,x=0 \\<br> &amp; 0,x\ne 0 \\<br>\end{align} \right.$ 且有 $\int_{-\infty }^{+\infty }{\text{ }\!\!\delta\!\!\text{ }\left( x \right)dx}=1$</p>
+<ul>
+<li>性质</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>$\delta $函数的性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对称</td>
+<td>$\text{ }\!\!\delta\!\!\text{ }\left( -x \right)=\text{ }\!\!\delta\!\!\text{ }\left( x \right)$</td>
+</tr>
+<tr>
+<td>平移（筛选，取样）</td>
+<td>$\int_{-\infty }^{+\infty }{\text{f}\left( t \right)\text{ }\!\!\delta\!\!\text{ }\left( t-T \right)\text{d}t}=\text{f}\left( T \right)$</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="特殊函数">特殊函数</h1><h2 id="狄拉克$\delta_$函数（Dirac_Delta_Function）">狄拉克$\delta $函数（Dirac Delta Function）</h2><p>$\text{ }\!\!\delta\!\!\tex]]>
+    </summary>
+    
+      <category term="特殊函数" scheme="http://notes.lixuan.xyz/tags/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="数学" scheme="http://notes.lixuan.xyz/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+</feed>

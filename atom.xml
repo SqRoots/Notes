@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[My Notes]]></title>
+  <title><![CDATA[笔记]]></title>
   
   <link href="//atom.xml" rel="self"/>
   <link href="http://notes.lixuan.xyz/"/>

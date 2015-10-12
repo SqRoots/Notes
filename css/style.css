@@ -415,6 +415,9 @@ body >header a {
   margin: 2px 10px;
   letter-spacing: 2px;
 }
+#textlogo a {
+  display: inline;
+}
 #textlogo h1.site-name {
   width: 86%;
   font-family: "covered_by_your_graceregular";

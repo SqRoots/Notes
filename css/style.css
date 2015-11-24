@@ -417,23 +417,22 @@ body >header a {
 }
 #textlogo a {
   display: inline;
+  font-weight: 200;
 }
 #textlogo h1.site-name {
-  width: 86%;
-  font-family: "covered_by_your_graceregular";
-  font-size: 164%;
+  font-size: 139%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 @media only screen and (min-width: 768px) {
   #textlogo h1.site-name {
-    font-size: 164%;
+    font-size: 139%;
   }
 }
 @media only screen and (min-width: 1024px) {
   #textlogo h1.site-name {
-    font-size: 164%;
+    font-size: 139%;
   }
 }
 #textlogo h2.blog-motto {
@@ -442,12 +441,12 @@ body >header a {
 }
 @media only screen and (min-width: 768px) {
   #textlogo h2.blog-motto {
-    font-size: 164%;
+    font-size: 139%;
   }
 }
 @media only screen and (min-width: 1024px) {
   #textlogo h2.blog-motto {
-    font-size: 164%;
+    font-size: 139%;
   }
 }
 .navbar {

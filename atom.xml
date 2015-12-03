@@ -49963,24 +49963,44 @@
     <link href="http://notes.lixuan.xyz/2015/08/28/GitHub%E5%85%A5%E9%97%A8/"/>
     <id>http://notes.lixuan.xyz/2015/08/28/GitHub入门/</id>
     <published>2015-08-28T08:28:35.000Z</published>
-    <updated>2015-10-23T08:03:35.918Z</updated>
-    <content type="html"><![CDATA[<h2 id="帮助">帮助</h2><ul>
-<li><a href="https://help.github.com/" target="_blank" rel="external">Git 帮助</a></li>
-<li><a href="https://guides.github.com/" target="_blank" rel="external">Git 向导</a></li>
-<li><a href="https://training.github.com/" target="_blank" rel="external">Git 训练</a></li>
-<li><a href="https://try.github.io/levels/1/challenges/1" target="_blank" rel="external">花15分钟模拟学习 Git</a></li>
+    <updated>2015-12-03T13:23:16.980Z</updated>
+    <content type="html"><![CDATA[<p>如果你对Git已经有所了解，那么你会在GitHub中玩耍得很开心。<br>如果你不了解Git，也可以在GitHub中慢慢成长……</p>
+<h2 id="官网">官网</h2><ul>
+<li><a href="https://git-scm.com/" target="_blank" rel="external">Git</a></li>
+<li><a href="https://github.com/" target="_blank" rel="external">GitHub</a><blockquote>
+<p>下面很多链接都可以在以上两个官网中找到<br>仅为方便起见，才在下面列出它们</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="帮助">帮助</h2><h3 id="Git">Git</h3><ul>
+<li><a href="https://git-scm.com/doc" target="_blank" rel="external">Git 文档</a></li>
+<li><a href="https://try.github.io" target="_blank" rel="external">花15分钟模拟学习 Git</a></li>
+<li><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">Learn Git Branching</a></li>
 <li><a href="http://www.runoob.com/manual/git-guide/" target="_blank" rel="external">Git 简明指南</a></li>
 </ul>
-<h2 id="书籍">书籍</h2><ul>
-<li><a href="http://git-scm.com/book/zh/v1" target="_blank" rel="external">Pro Git 中文书</a></li>
+<h3 id="GitHub">GitHub</h3><ul>
+<li><a href="https://help.github.com/" target="_blank" rel="external">GitHub 帮助</a></li>
+<li><a href="https://guides.github.com/" target="_blank" rel="external">GitHub 向导</a></li>
+<li><a href="https://training.github.com/" target="_blank" rel="external">GitHub 训练</a></li>
+</ul>
+<h2 id="书籍">书籍</h2><h3 id="Git书籍">Git书籍</h3><ul>
+<li><a href="https://git-scm.com/book/en" target="_blank" rel="external">Pro Git 英文书</a></li>
+<li><a href="https://git-scm.com/book/zh" target="_blank" rel="external">Pro Git 中文书</a></li>
+</ul>
+<h3 id="备忘单">备忘单</h3><ul>
 <li><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" target="_blank" rel="external">Git 英文备忘单</a></li>
 <li><a href="https://training.github.com/kit/downloads/cn/github-git-cheat-sheet.html" target="_blank" rel="external">Git 中文备忘单</a></li>
 </ul>
+<h2 id="工具下载">工具下载</h2><ul>
+<li><a href="https://git-scm.com" target="_blank" rel="external">Git</a>：命令行客户端</li>
+<li><a href="https://desktop.github.com/" target="_blank" rel="external">GitHub Desktop</a>：GitHub桌面版客户端（适合不愿以命令行方式管理的用户）</li>
+<li><a href="https://git-scm.com/download/gui/win" target="_blank" rel="external">GUI Clients</a>：窗口客户端合集（各种操作系统），玩腻了上面的客户端来此处发现新大陆</li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="帮助">帮助</h2><ul>
-<li><a href="https://help.github.com/" target="_blank" rel="external">Git 帮助</a></li>
-<li><a href="https://guides.gi]]>
+    <![CDATA[<p>如果你对Git已经有所了解，那么你会在GitHub中玩耍得很开心。<br>如果你不了解Git，也可以在GitHub中慢慢成长……</p>
+<h2 id="官网">官网</h2><ul>
+<li><a href="https://git-scm.com/" target="_]]>
     </summary>
     
       <category term="Git,GitHub" scheme="http://notes.lixuan.xyz/tags/Git-GitHub/"/>
@@ -50110,37 +50130,50 @@
     <link href="http://notes.lixuan.xyz/2015/08/18/%E5%86%B7%E7%9F%A5%E8%AF%86/"/>
     <id>http://notes.lixuan.xyz/2015/08/18/冷知识/</id>
     <published>2015-08-18T10:35:48.000Z</published>
-    <updated>2015-11-24T14:08:45.756Z</updated>
-    <content type="html"><![CDATA[<h2 id="菠萝蜜">菠萝蜜</h2><ul>
+    <updated>2015-12-03T13:23:17.924Z</updated>
+    <content type="html"><![CDATA[<h4 id="菠萝蜜">菠萝蜜</h4><ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BD%97%E8%9C%9C" target="_blank" rel="external"><strong>菠萝蜜</strong></a> 是世界上最大的水果，只有大象会整个吞食</li>
 </ul>
-<h2 id="奇怪的电台">奇怪的电台</h2><ul>
+<h4 id="奇怪的电台">奇怪的电台</h4><ul>
 <li><a href="https://zh.wikipedia.org/wiki/UVB-76" target="_blank" rel="external">俄罗斯电台：<strong>UVB-76</strong></a></li>
 </ul>
 <blockquote>
 <p><strong>UVB-76</strong>是俄罗斯一个位于4625 kHz（单边带）的神秘电台，收音机爱好者将其称为The Buzzer。它每天24小时发送向外发送单调的声音，每分钟重复约25次。UVB-76电台于1982年首次被观察到，在少数情况下持续的嗡嗡声会中断，并出现由俄语播出的语音信息。</p>
 </blockquote>
-<h2 id="树围草衣">树围草衣</h2><ul>
+<h4 id="树围草衣">树围草衣</h4><ul>
 <li>入冬前，很多树会被围上“草衣”。</li>
 </ul>
 <blockquote>
 <p>这不并不是担心树木怕冷，而是给无法在树上过冬的虫子提供一个临时住所。在春天到来之前，它们会被烧掉或深埋，从而减少虫害。<br>虽然残忍了点儿，却很奏效。<br>感悟：人生不能太贪图安逸。</p>
 </blockquote>
-<h2 id="木棍撑山">木棍撑山</h2><ul>
+<h4 id="木棍撑山">木棍撑山</h4><ul>
 <li>在山区，特别是旅游景点，很多大石头或凸出的山体下面会被支上好多小木棍儿。</li>
 </ul>
 <blockquote>
 <p>放置这些小木棍儿的目的并非是为了支撑住大石头或山体不倒下，它们也支撑不住，也并非迷信使然。<br>而是为了起到警戒作用，当大石头或山体松动时，小木棍儿就会被压弯或压断，护山人员就会知道此处危险，从而避免游客或其它进山人员伤亡。</p>
 </blockquote>
-<h2 id="毕加索的名字真长">毕加索的名字真长</h2><ul>
+<h4 id="毕加索的名字真长">毕加索的名字真长</h4><ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E5%B7%B4%E5%8B%83%E7%BE%85%C2%B7%E7%95%A2%E5%8D%A1%E7%B4%A2" target="_blank" rel="external">毕加索</a>（西班牙文：Pablo Ruiz Picasso，1881年10月25日－1973年4月8日）</li>
 </ul>
 <blockquote>
 <p>全名：巴勃罗·迭戈·何塞·弗朗西斯科·德·保拉·胡安·尼波穆切诺·玛丽亚·德洛斯雷梅迪奥斯·西普里亚诺·德·拉圣蒂西马·特立尼达·鲁伊斯·毕加索（Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz Picasso）</p>
 </blockquote>
+<h4 id="为什么把自动取票机上的身份证感应器设置成斜面">为什么把自动取票机上的身份证感应器设置成斜面</h4><ul>
+<li>在火车站的自动取票机上取票时，需要通过刷身份证来识别身份，细心的朋友肯定会发现身份证感应器不是水平的，而是有一定的倾角。那为什么设计成斜面呢，设计成水平的多好啊，可以直接把身份证放在上面，让手拿行李的我方便很多！</li>
+</ul>
+<blockquote>
+<p>相比于稍稍麻烦些，把身份证遗忘在取票机上带来的损失更大！<br>而对于赶火车的你来说，往往比较匆忙，心里只想着：“快出票啊，火车马上开了”。于是，当车票打印出的一瞬间，抓起车票就赶火车去了。<br>如果感应器是倾斜的，只要身份证离手必然落地，那么你就不会遗忘了。</p>
+<p>在很多场合下，与其用提醒或警告的方式阻止别人犯错，倒不如压根儿就不给他犯错的机会！</p>
+</blockquote>
+<h4 id="雀尾螳螂虾">雀尾螳螂虾</h4><ul>
+<li>这家伙的战斗力，估计与孙悟空是一个级别的！</li>
+</ul>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Odontodactylus_scyllarus" target="_blank" rel="external">雀尾螳螂虾</a>（英文：Peacock mantis shrimp；学名：Odontodactylus scyllarus），<a href="https://zh.wikipedia.org/wiki/%E8%9D%A6%E8%9B%84" target="_blank" rel="external">口足目</a>齿虾蛄科（Odontodactylidae），主要分布于印度尼西亚巴里岛附近的水域。<br>战斗力极强，就像一个超重量级拳击手，可以轻易的击碎贝类、螺类的坚硬石灰质外壳。据说它出拳的速度可超过80km/h，加速度与22毫米口径手枪差不多，一拳的力量可达1500N！<a href="https://www.youtube.com/watch?v=U11DgbefmQQ" target="_blank" rel="external">在YouTube上一段视频，可以亲眼目睹它的强悍，一下就能把螃蟹前足击碎，甚至是击落！</a>。<br>此外，它的视觉系统也是极强的，人类难以企及，在动物界中是数一数二的。<br>雀尾螳螂虾和我最爱吃的皮皮虾都属于口足目，相比这下，皮皮虾就弱暴了。</p>
+</blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="菠萝蜜">菠萝蜜</h2><ul>
+    <![CDATA[<h4 id="菠萝蜜">菠萝蜜</h4><ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BD%97%E8%9C%9C" target="_blank" rel="external"><strong>菠萝蜜]]>
     </summary>
     
@@ -50155,7 +50188,7 @@
     <link href="http://notes.lixuan.xyz/2015/08/18/%E5%85%B3%E4%BA%8EMarkdown/"/>
     <id>http://notes.lixuan.xyz/2015/08/18/关于Markdown/</id>
     <published>2015-08-18T09:38:43.000Z</published>
-    <updated>2015-09-23T14:15:14.094Z</updated>
+    <updated>2015-12-03T13:23:19.855Z</updated>
     <content type="html"><![CDATA[<h1 id="语法">语法</h1><p>参见：</p>
 <ul>
 <li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版) </a></li>
@@ -50165,7 +50198,7 @@
 </ul>
 <h1 id="注意事项">注意事项</h1><h2 id="转义字符">转义字符</h2><ul>
 <li>链接中包含<strong> 圆括号</strong>时，用<strong>%28</strong>和<strong>%29</strong>替代，实际上只替换右圆括号即可</li>
-<li><p>数学公式中，有花括号<strong><em>{</em></strong>时，一般需要放在下面标记中</p>
+<li><p>在Hexo的数学公式中，有花括号<strong><em>{</em></strong>时，一般需要放在下面标记中</p>
 <figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">% raw %&#125;</span></span><br><span class="line">...</span><br><span class="line">&#123;<span class="comment">% endraw %&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>另外，如果Hexo解析出错时，也许是由于下面的转义字符</p>
@@ -50311,11 +50344,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[冷门定理]]></title>
-    <link href="http://notes.lixuan.xyz/2015/08/18/%E5%86%B7%E9%97%A8%E5%AE%9A%E7%90%86/"/>
-    <id>http://notes.lixuan.xyz/2015/08/18/冷门定理/</id>
+    <title><![CDATA[一些定理]]></title>
+    <link href="http://notes.lixuan.xyz/2015/08/18/%E4%B8%80%E4%BA%9B%E5%AE%9A%E7%90%86/"/>
+    <id>http://notes.lixuan.xyz/2015/08/18/一些定理/</id>
     <published>2015-08-18T09:20:13.000Z</published>
-    <updated>2015-09-23T13:53:18.501Z</updated>
+    <updated>2015-12-03T13:26:03.043Z</updated>
     <content type="html"><![CDATA[<h1 id="博弈论">博弈论</h1><h2 id="策梅洛定理_(博弈论)"><a href="https://zh.wikipedia.org/wiki/%E7%AD%96%E6%A2%85%E6%B4%9B%E5%AE%9A%E7%90%86_%28%E5%8D%9A%E5%BC%88%E8%AB%96%29" target="_blank" rel="external">策梅洛定理 (博弈论)</a></h2><blockquote>
 <p>策梅洛定理（英语：Zermelo’s theorem）是博弈论的一条定理，以恩斯特·策梅洛命名。定理表示在二人的有限游戏中，如果双方皆拥有完全的资讯，并且运气因素并不牵涉在游戏中，那先行或后行者当一必有一方有必胜/必不败的策略。若运用至国际象棋，则策梅洛定理表示“要么黑方有必胜之策略、要么白方有必胜之策略、要么双方也有必不败之策略”。</p>
 <p>策梅洛的论文于1913年以德文发表，并被Ulrich Schwalbe和Paul Walker于1997年译为英文。</p>

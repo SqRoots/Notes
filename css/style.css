@@ -957,9 +957,9 @@ article .article-content .kb {
   white-space: nowrap;
 }
 article .article-content h1 {
-  font-size: 180%;
+  font-size: 160%;
   line-height: 1.2em;
-  padding: 0.1em;
+  padding: 0.2em 0.6em;
   margin-top: 1.5em;
   margin-right: 0.5em;
   background: #93d4e8;
@@ -969,7 +969,7 @@ article .article-content h1 {
   box-shadow: 1px 1px 3px #333;
 }
 article .article-content h2 {
-  font-size: 150%;
+  font-size: 140%;
   line-height: 1.1em;
   padding: 0.1em;
   margin-top: 0.8em;
@@ -1021,7 +1021,7 @@ article .article-content abbr {
 article .article-content blockquote {
   border-left: 0.2em solid #2ca6cb;
   margin: 0.5em 0.5em 0.5em 0.5em;
-  padding: 3px 1em 10px 1em;
+  padding: 0.5em 1em 0.5em 1em;
   line-height: 1.5;
   font-size: 100%;
   color: #333;
@@ -1086,11 +1086,11 @@ article .article-content table td>code {
 }
 article .article-content p {
   line-height: 1.5;
-  margin-top: 0.7em;
+  margin-top: 0.5em;
 }
 @media only screen and (min-width: 1024px) {
   article .article-content p {
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 }
 article .article-content img,

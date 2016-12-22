@@ -1,0 +1,188 @@
+# 导出数据时提示字符集错误
+将源数据的字符字段转为nvarchar类型，例如：`CAST(字段名 as nvarchar(10))`
+
+# 设置字母大小写敏感
+## 针对整个数据库
+* **方法一**：`Alter DataBase 数据库名 Collate Chinese_PRC_CS_AI`
+* **方法二**：右击想要修改的数据库，属性，选项，排序规则，选择：`Chinese_PRC_CS_AI`
+
+## 针对某个字段
+默认的排序规则`Chinese_PRC_CI_AS`，不区分大小写，以下方法设置字段对大小写敏感
+
+* 建表时，可在字段然后添加：`Collate Chinese_PRC_CS_AI`
+* 修改已经存在的表中的字段：`Alter Table 表名 Alter Column 字段 varchar(30) Collate Chinese_PRC_CS_AS`
+
+# 阻止保存要求重新创建表的更改
+通过窗口模式修改表时，会提示这样的错误：“**阻止保存要求重新创建表的更改**”，修改方法如下：
+工具 > 选项 > 设计器(Designers) > 表设计器和数据库设计器 > 阻止保存要求重新创建表的更改
+
+# 行列互转
+[查看源文章](http://blackboy51.blog.163.com/blog/static/511359122011961121820/)
+
+## 行转列
+### 创建表
+```sql
+if object_id('#tb') is not null drop table tb
+go
+
+create table #tb (姓名 varchar(10),课程 varchar(10),分数 int)
+insert into #tb values('张三','语文',74)
+insert into #tb values('张三','数学',83)
+insert into #tb values('张三','物理',93)
+insert into #tb values('李四','语文',74)
+insert into #tb values('李四','数学',84)
+insert into #tb values('李四','物理',94)
+go
+
+select * from #tb
+go
+```
+
+姓名 课程 分数
+张三 语文 74
+张三 数学 83
+张三 物理 93
+李四 语文 74
+李四 数学 84
+李四 物理 94
+
+### 静态SQL(SQL Server 2000)
+```sql
+select 
+	姓名,
+	max(case 课程 when '语文' then 分数 else 0 end) 语文,
+	max(case 课程 when '数学' then 分数 else 0 end) 数学,
+	max(case 课程 when '物理' then 分数 else 0 end) 物理
+	from #tb
+	group by 姓名
+```
+
+姓名 语文 数学 物理
+李四 74 84 94
+张三 74 83 93
+
+
+### 动态SQL(SQL Server 2000)
+```sql
+--SQL SERVER 2000动态SQL,指课程不止语文、数学、物理这三门课程。(以下同)
+
+declare @sql varchar(500)
+set @sql='select 姓名'
+
+select @sql=@sql+',max(case 课程 when '''+ 课程 +''' then 分数 else 0 end) [' + 课程 + ']'
+	from (select distinct 课程 from #tb) a --同from tb group by课程，默认按课程名排序
+set @sql=@sql+' from #tb group by 姓名'
+exec (@sql)
+
+--或者这样
+--使用isnull(),变量先确定动态部分，这样可以少写一行代码
+
+declare @sql varchar(8000)
+
+select @sql=isnull(@sql+',','')+' max(case 课程 when '''+课程+''' then 分数 else 0 end) ['+课程+']'
+	from (select distinct 课程 from #tb) as a
+set @sql='select 姓名,'+@sql+' from #tb group by 姓名'
+exec(@sql)
+```
+
+姓名 数学 物理 语文
+李四 84 94 74
+张三 83 93 74
+
+
+### 静态SQL(SQL Server 2005)
+```sql
+select * from #tb pivot(max(分数) for 课程 in (语文,数学,物理)) a
+```
+
+### 动态SQL(SQL Server 2005)
+```sql
+--使用stuff()
+
+declare @sql varchar(8000)
+set @sql='' --初始化变量@sql
+
+select @sql=@sql+','+课程 from #tb group by 课程 --变量多值赋值
+set @sql=stuff(@sql,1,1,'') --去掉首个','
+set @sql='select * from #tb pivot (max(分数) for 课程 in ('+@sql+')) a'
+exec(@sql)
+
+--或使用isnull()
+
+declare @sql varchar(8000)
+
+--获得课程集合
+select @sql=isnull(@sql+',','') + 课程 from #tb group by 课程
+set @sql='select * from #tb pivot (max(分数) for 课程 in ('+@sql+')) a'
+exec(@sql)
+```
+
+## 列转行
+### 创建表
+```sql
+if object_id('#tb') is not null drop table #tb
+go
+
+create table #tb (姓名 varchar(10),语文 int,数学 int,物理 int)
+insert into #tb values('张三',74,83,93)
+insert into #tb values('李四',74,84,94)
+go
+
+select * from #tb
+go
+```
+
+姓名 语文 数学 物理
+张三 74 83 93
+李四 74 84 94
+
+
+### 静态SQL(SQL Server 2000)
+
+```sql
+select * from
+	(
+	select 姓名,课程='语文',分数=语文 from #tb
+	union all
+	select 姓名,课程='数学',分数=数学 from #tb
+	union all
+	select 姓名,课程='物理',分数=物理 from #tb
+	) t
+order by 姓名,case 课程 when '语文' then 1 when '数学' then 2 when '物理' then 3 end
+```
+
+姓名 课程 分数
+李四 语文 74
+李四 数学 84
+李四 物理 94
+张三 语文 74
+张三 数学 83
+张三 物理 93
+
+
+### 动态SQL(SQL Server 2000)
+
+```sql
+declare @sql varchar(8000)
+select @sql=isnull(@sql+' union all ',' ')+' select 姓名, [课程]='+quotename(Name,'''')+' , [分数] = '+quotename(Name)+' from #tb'
+	from syscolumns --作用表和视图
+	where Name!='姓名' and ID=object_id('#tb') --表名#tb，不包含列名为姓名的其他列
+	order by colid
+exec(@sql  + ' order by 姓名')
+```
+
+### 静态SQL(SQL Server 2005)
+```sql
+select 姓名,课程,分数 from #tb unpivot (分数 for 课程 in ([语文],[数学],[物理])) t
+```
+
+### 动态SQL(SQL Server 2005)
+```sql
+declare @sql nvarchar(4000)
+select @sql=isnull(@sql+',','')+quotename(Name)
+	from syscolumns --作用表和视图
+	where ID=object_id('tb') and Name not in ('姓名')
+	order by Colid
+set @sql='select 姓名,[课程],[分数] from #tb unpivot ([分数] for [课程] in('+@sql+')) b'
+exec(@sql)
+```

@@ -1,0 +1,127 @@
+<h1 id="导出数据时提示字符集错误">导出数据时提示字符集错误</h1>
+<p>将源数据的字符字段转为nvarchar类型，例如：<code>CAST(字段名 as nvarchar(10))</code></p>
+<h1 id="设置字母大小写敏感">设置字母大小写敏感</h1>
+<h2 id="针对整个数据库">针对整个数据库</h2>
+<ul>
+<li><strong>方法一</strong>：<code>Alter DataBase 数据库名 Collate Chinese_PRC_CS_AI</code></li>
+<li><strong>方法二</strong>：右击想要修改的数据库，属性，选项，排序规则，选择：<code>Chinese_PRC_CS_AI</code></li>
+</ul>
+<h2 id="针对某个字段">针对某个字段</h2>
+<p>默认的排序规则<code>Chinese_PRC_CI_AS</code>，不区分大小写，以下方法设置字段对大小写敏感</p>
+<ul>
+<li>建表时，可在字段然后添加：<code>Collate Chinese_PRC_CS_AI</code></li>
+<li>修改已经存在的表中的字段：<code>Alter Table 表名 Alter Column 字段 varchar(30) Collate Chinese_PRC_CS_AS</code></li>
+</ul>
+<h1 id="阻止保存要求重新创建表的更改">阻止保存要求重新创建表的更改</h1>
+<p>通过窗口模式修改表时，会提示这样的错误：“<strong>阻止保存要求重新创建表的更改</strong>”，修改方法如下： 工具 &gt; 选项 &gt; 设计器(Designers) &gt; 表设计器和数据库设计器 &gt; 阻止保存要求重新创建表的更改</p>
+<h1 id="行列互转">行列互转</h1>
+<p><a href="http://blackboy51.blog.163.com/blog/static/511359122011961121820/">查看源文章</a></p>
+<h2 id="行转列">行转列</h2>
+<h3 id="创建表">创建表</h3>
+<pre class="sql"><code>if object_id(&#39;#tb&#39;) is not null drop table tb
+go
+
+create table #tb (姓名 varchar(10),课程 varchar(10),分数 int)
+insert into #tb values(&#39;张三&#39;,&#39;语文&#39;,74)
+insert into #tb values(&#39;张三&#39;,&#39;数学&#39;,83)
+insert into #tb values(&#39;张三&#39;,&#39;物理&#39;,93)
+insert into #tb values(&#39;李四&#39;,&#39;语文&#39;,74)
+insert into #tb values(&#39;李四&#39;,&#39;数学&#39;,84)
+insert into #tb values(&#39;李四&#39;,&#39;物理&#39;,94)
+go
+
+select * from #tb
+go</code></pre>
+<p>姓名 课程 分数 张三 语文 74 张三 数学 83 张三 物理 93 李四 语文 74 李四 数学 84 李四 物理 94</p>
+<h3 id="静态sqlsql-server-2000">静态SQL(SQL Server 2000)</h3>
+<pre class="sql"><code>select 
+    姓名,
+    max(case 课程 when &#39;语文&#39; then 分数 else 0 end) 语文,
+    max(case 课程 when &#39;数学&#39; then 分数 else 0 end) 数学,
+    max(case 课程 when &#39;物理&#39; then 分数 else 0 end) 物理
+    from #tb
+    group by 姓名</code></pre>
+<p>姓名 语文 数学 物理 李四 74 84 94 张三 74 83 93</p>
+<h3 id="动态sqlsql-server-2000">动态SQL(SQL Server 2000)</h3>
+<pre class="sql"><code>--SQL SERVER 2000动态SQL,指课程不止语文、数学、物理这三门课程。(以下同)
+
+declare @sql varchar(500)
+set @sql=&#39;select 姓名&#39;
+
+select @sql=@sql+&#39;,max(case 课程 when &#39;&#39;&#39;+ 课程 +&#39;&#39;&#39; then 分数 else 0 end) [&#39; + 课程 + &#39;]&#39;
+    from (select distinct 课程 from #tb) a --同from tb group by课程，默认按课程名排序
+set @sql=@sql+&#39; from #tb group by 姓名&#39;
+exec (@sql)
+
+--或者这样
+--使用isnull(),变量先确定动态部分，这样可以少写一行代码
+
+declare @sql varchar(8000)
+
+select @sql=isnull(@sql+&#39;,&#39;,&#39;&#39;)+&#39; max(case 课程 when &#39;&#39;&#39;+课程+&#39;&#39;&#39; then 分数 else 0 end) [&#39;+课程+&#39;]&#39;
+    from (select distinct 课程 from #tb) as a
+set @sql=&#39;select 姓名,&#39;+@sql+&#39; from #tb group by 姓名&#39;
+exec(@sql)</code></pre>
+<p>姓名 数学 物理 语文 李四 84 94 74 张三 83 93 74</p>
+<h3 id="静态sqlsql-server-2005">静态SQL(SQL Server 2005)</h3>
+<pre class="sql"><code>select * from #tb pivot(max(分数) for 课程 in (语文,数学,物理)) a</code></pre>
+<h3 id="动态sqlsql-server-2005">动态SQL(SQL Server 2005)</h3>
+<pre class="sql"><code>--使用stuff()
+
+declare @sql varchar(8000)
+set @sql=&#39;&#39; --初始化变量@sql
+
+select @sql=@sql+&#39;,&#39;+课程 from #tb group by 课程 --变量多值赋值
+set @sql=stuff(@sql,1,1,&#39;&#39;) --去掉首个&#39;,&#39;
+set @sql=&#39;select * from #tb pivot (max(分数) for 课程 in (&#39;+@sql+&#39;)) a&#39;
+exec(@sql)
+
+--或使用isnull()
+
+declare @sql varchar(8000)
+
+--获得课程集合
+select @sql=isnull(@sql+&#39;,&#39;,&#39;&#39;) + 课程 from #tb group by 课程
+set @sql=&#39;select * from #tb pivot (max(分数) for 课程 in (&#39;+@sql+&#39;)) a&#39;
+exec(@sql)</code></pre>
+<h2 id="列转行">列转行</h2>
+<h3 id="创建表-1">创建表</h3>
+<pre class="sql"><code>if object_id(&#39;#tb&#39;) is not null drop table #tb
+go
+
+create table #tb (姓名 varchar(10),语文 int,数学 int,物理 int)
+insert into #tb values(&#39;张三&#39;,74,83,93)
+insert into #tb values(&#39;李四&#39;,74,84,94)
+go
+
+select * from #tb
+go</code></pre>
+<p>姓名 语文 数学 物理 张三 74 83 93 李四 74 84 94</p>
+<h3 id="静态sqlsql-server-2000-1">静态SQL(SQL Server 2000)</h3>
+<pre class="sql"><code>select * from
+    (
+    select 姓名,课程=&#39;语文&#39;,分数=语文 from #tb
+    union all
+    select 姓名,课程=&#39;数学&#39;,分数=数学 from #tb
+    union all
+    select 姓名,课程=&#39;物理&#39;,分数=物理 from #tb
+    ) t
+order by 姓名,case 课程 when &#39;语文&#39; then 1 when &#39;数学&#39; then 2 when &#39;物理&#39; then 3 end</code></pre>
+<p>姓名 课程 分数 李四 语文 74 李四 数学 84 李四 物理 94 张三 语文 74 张三 数学 83 张三 物理 93</p>
+<h3 id="动态sqlsql-server-2000-1">动态SQL(SQL Server 2000)</h3>
+<pre class="sql"><code>declare @sql varchar(8000)
+select @sql=isnull(@sql+&#39; union all &#39;,&#39; &#39;)+&#39; select 姓名, [课程]=&#39;+quotename(Name,&#39;&#39;&#39;&#39;)+&#39; , [分数] = &#39;+quotename(Name)+&#39; from #tb&#39;
+    from syscolumns --作用表和视图
+    where Name!=&#39;姓名&#39; and ID=object_id(&#39;#tb&#39;) --表名#tb，不包含列名为姓名的其他列
+    order by colid
+exec(@sql  + &#39; order by 姓名&#39;)</code></pre>
+<h3 id="静态sqlsql-server-2005-1">静态SQL(SQL Server 2005)</h3>
+<pre class="sql"><code>select 姓名,课程,分数 from #tb unpivot (分数 for 课程 in ([语文],[数学],[物理])) t</code></pre>
+<h3 id="动态sqlsql-server-2005-1">动态SQL(SQL Server 2005)</h3>
+<pre class="sql"><code>declare @sql nvarchar(4000)
+select @sql=isnull(@sql+&#39;,&#39;,&#39;&#39;)+quotename(Name)
+    from syscolumns --作用表和视图
+    where ID=object_id(&#39;tb&#39;) and Name not in (&#39;姓名&#39;)
+    order by Colid
+set @sql=&#39;select 姓名,[课程],[分数] from #tb unpivot ([分数] for [课程] in(&#39;+@sql+&#39;)) b&#39;
+exec(@sql)</code></pre>

@@ -1,0 +1,36 @@
+<h1 id="常见问题集">常见问题集</h1>
+<h2 id="退出窗口底部显示不全">退出窗口底部显示不全</h2>
+<p>执行下面的代码即可：</p>
+<pre class="mathematica"><code>path = $InstallationDirectory &lt;&gt; 
+   &quot;/SystemFiles/FrontEnd/TextResources/MathematicaClosingDialog.nb&quot;;
+
+If[! FileExistsQ[path &lt;&gt; &quot;.bk&quot;], CopyFile[path, path &lt;&gt; &quot;.bk&quot;]];(*备份*)
+
+nb = Import[path] // NotebookPut;
+
+SetOptions[
+  nb, {WindowSize -&gt; {600, All}, WindowElements -&gt; {&quot;MenuBar&quot;}}];
+
+Export[path, nb];</code></pre>
+<h2 id="连接数据库">连接数据库</h2>
+<h3 id="连接到-oracle-数据库">连接到 Oracle 数据库：</h3>
+<p>通过 JDBC 连接到 Oracle</p>
+<ol style="list-style-type: decimal">
+<li>到 <a href="http://www.oracle.com/">Oracle 官网</a>下载 JDBC 驱动程序，放到某目录下，比如：“D:\jdbc_drivers”，下面要用到</li>
+<li>运行下面的语句，即可创建连接：conn</li>
+</ol>
+<pre class="mathematica"><code>Needs[&quot;DatabaseLink`&quot;, &quot;JLink`&quot;];(*载入需要的包*)
+AddToClassPath[
+  &quot;D:\\jdbc_drivers\\&quot;];(*指定 Oracle JDBC 驱动的所在目录*)
+
+conn = OpenSQLConnection[
+  JDBC[&quot;oracle.jdbc.driver.OracleDriver&quot;, 
+   &quot;jdbc:oracle:thin:@主机IP地址:端口:服务名&quot;], &quot;Username&quot; -&gt; &quot;用户名&quot;, 
+  &quot;Password&quot; -&gt; &quot;密码&quot;];(*连接到指定的Oracle数据库*)</code></pre>
+<p><strong>注意</strong>：在使用函数“SQLExecute”时，其中的SQL语句不要使用分号结尾，否则报错。</p>
+<p>参考：<a href="https://reference.wolfram.com/language/DatabaseLink/tutorial/DatabaseConnections.html#27756">Mathematica帮助</a></p>
+<p>下载：<a href="http://pan.baidu.com/s/1o7KCOmY">我使用的是 Oracle 10.2 版的 JDBC 驱动程序</a></p>
+<h3 id="连接到其它数据库">连接到其它数据库。</h3>
+<p>比如：SQL Server，MySQL，Access等数据库，Mathematica提供了相关的驱动。可以运行下载的语句，通过交互的方式创建连接：</p>
+<pre class="mathematica"><code>Needs[&quot;DatabaseLink`&quot;];(*载入需要的包*)
+conn = OpenSQLConnection[];(*通过交互方式连接到数据库*)</code></pre>

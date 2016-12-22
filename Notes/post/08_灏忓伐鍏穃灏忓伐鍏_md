@@ -1,0 +1,34 @@
+# CSS工具
+## 变换时间函数`cubic-bezier`实时预览
+在 CSS3 中的过渡效果，有属性 transition-timing-function ，可用来控制变化速度。
+
+* [变换时间函数的参数设置](http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp)
+* [cubic-bezier实时预览](http://cubic-bezier.com/)
+
+# 字体工具
+## 在线工具
+* [**Ico Moon**（图标转字体）](https://icomoon.io/app)
+* [**Fort Awesome**（网络图标字体）](http://fortawesome.github.io/Font-Awesome/icons/)（[中文版](http://www.bootcss.com/p/font-awesome/)）
+* [**Font Squirrel**（字体转换，可以指定部分字符）](http://www.fontsquirrel.com/tools/webfont-generator)
+* [**Online Font Converter**](https://onlinefontconverter.com/)
+* [**Google Fonts**](https://www.google.com/fonts)
+
+## 本地工具
+* [**Font Forge**（开源字体编辑软件）](http://fontforge.github.io/)
+
+## 一些不错的字体网站
+* [有字库](http://www.youziku.com/)
+* [造字工房](http://makefont.com/)
+* [新蒂字体](http://font.sentywed.com/)
+
+# Chrome 浏览器扩展程序
+* [**Adblock Plus**（去广告）](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?utm_source=chrome-app-launcher-info-dialog)| [官网](https://adblockplus.org/)
+* [**feeder**（RSS订阅）](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?utm_source=chrome-app-launcher-info-dialog)| [官网](http://feeder.co/)
+* [**crxMouse Chrome Gestures**（鼠标手势）](https://chrome.google.com/webstore/detail/crxmouse-chrome-gestures/jlgkpaicikihijadgifklkbpdajbkhjo?utm_source=chrome-app-launcher-info-dialog)
+* [**Fatkun图片批量下载**](https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf)
+* [**SwitchyOmega**（代理管理工具）](https://chrome.google.com/webstore/category/apps)[源代码：GitHub](https://github.com/FelisCatus/SwitchyOmega)
+
+# 文本编辑器
+## Vim
+* [官网](http://www.vim.org/)
+* [学习](http://cenalulu.github.io/linux/all-vim-cheatsheat/)

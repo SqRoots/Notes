@@ -1,0 +1,393 @@
+﻿*{margin:0;}
+a:link {color:#0000cc;}		/* 未被访问的链接 */
+a:visited {color:#0000aa;}	/* 已被访问的链接 */
+a:hover {text-decoration:underline;color:#00c;}	/* 鼠标指针移动到链接上 */
+a:active {color:#00aa00;}	/* 正在被点击的链接 */
+body{background:#eeeeee url(../imgs/bg.jpg) repeat left top;font-family:"Microsoft Yahei";}
+
+pre {
+	overflow: auto;
+	font-size: 13px;
+	padding: 8px;
+	width: auto;
+	background: rgba(0,200,255,0.1);
+	box-shadow: 0px 0px 3px rgba(0,0,255,0.5);
+	max-height: 600px;
+	margin-bottom: 1em;
+	border-radius: 3px;
+	font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif
+}
+
+code {font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;}
+
+/*头部-左侧*/
+div.c-head{
+	position:fixed;
+	z-index:10000;
+	float:left;
+	margin:0;
+	padding-top:5px;
+	width:50px;
+	color:#fff;
+	border-right-style:solid;
+	border-right-color:#008;
+	border-width:2px;
+	background:#336699;
+	line-height:30px;
+	text-align:center;
+	font-family:Cursive,"Microsoft Yahei";
+}
+
+div.headlogo:hover{
+	transform:			rotate(360deg);
+	-ms-transform:		rotate(360deg);		/* IE 9 */
+	-webkit-transform:	rotate(360deg);		/* Safari and Chrome */
+	-o-transform:		rotate(360deg);		/* Opera */
+	-moz-transform:		rotate(360deg);		/* Firefox */
+}
+div.headlogo{
+	transition:			transform			0.5s;
+	-moz-transition:	-moz-transform		0.5s;		/* Firefox 4 */
+	-webkit-transition:	-webkit-transform	0.5s;	/* Safari 和 Chrome */
+	-o-transition:		-o-transform		0.5s;		/* Opera */
+}
+div.c-head center{margin-top:20px;cursor:pointer;}
+div.headtext center:hover{background:#225588;}
+div.headtext center{
+	transition:			background		0.2s;
+	-moz-transition:	background		0.2s;		/* Firefox 4 */
+	-webkit-transition:	background		0.2s;	/* Safari 和 Chrome */
+	-o-transition:		background		0.2s;		/* Opera */
+}
+div#backgroudColors center{margin-top:5px;padding:5px;cursor:pointer;color:#FFF;}
+div#backgroudColors center:hover{background:#225588;}
+div#backgroudColors center{
+	transition:			background		0.2s;
+	-moz-transition:	background		0.2s;		/* Firefox 4 */
+	-webkit-transition:	background		0.2s;	/* Safari 和 Chrome */
+	-o-transition:		background		0.2s;		/* Opera */
+}
+div#backgroudColors{
+	position:fixed;
+	width:0;
+	height:0;
+	left:50px;
+	top:61px;
+	overflow:hidden;
+	z-index:20000;
+	opacity:0;
+	background:#336699;
+	border-right-style:solid;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	border-left-style:dotted;
+	border-color:#008;
+	border-width:2px;
+	border-left-width:1px;
+	transition-property: width,height,opacity;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
+	/* Firefox 4 */
+	-moz-transition-property:width,height,opacity;
+	-moz-transition-duration:0.1s;
+	-moz-transition-timing-function:linear;
+	/* Safari 和 Chrome */
+	-webkit-transition-property:width,height,opacity;
+	-webkit-transition-duration:0.1s;
+	-webkit-transition-timing-function:linear;
+	/* Opera */
+	-o-transition-property:width,height,opacity;
+	-o-transition-duration:0.1s;
+	-o-transition-timing-function:linear;
+}
+/*主体*/
+div.c-body{
+	position:absolute;
+	z-index:0;
+	left:51px;
+	margin:0;
+	float:left;
+}
+
+/*左侧－目录树*/
+div.ContentsTree{
+	position:fixed;
+	z-index:1000;
+	float:left;
+	left:51px;
+	width:280px;
+	background:rgba(231,231,231,0.3);
+	border-right-style:solid;
+	border-right-color:#aaa;
+	border-width: 1px;
+	overflow:hidden;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+	color:#999;
+	transition:color 0.5s;
+	-moz-transition:color 0.5s;		/* Firefox 4 */
+	-webkit-transition:color 0.5s;	/* Safari 和 Chrome */
+	-o-transition:color 0.5s;		/* Opera */
+}
+div.ContentsTree:hover{color:#000;}
+
+a.Rank1{font-weight:Bold;}
+
+div.i-head {
+	padding:10px;
+	text-align:center;
+	font-family:Cursive,"Microsoft Yahei";
+}
+div.i-items {
+	position:relative;
+	padding-top:15px;
+	padding-bottom:20px;
+	width:297px;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+/*列表*/
+ul {
+	list-style:none;
+	padding-left:20px;
+}
+
+ul.hide {
+	padding-left:20px;
+	display:none;
+	overflow:hidden;
+}
+
+li {
+	list-style: none;
+	margin:5px 0 0 0;
+	font-size:14px;
+	font-weight:400;
+	}
+
+
+	
+i{cursor:pointer;}
+
+span.i-mouseover {cursor:pointer;}
+
+span.ContentsTree {padding-left:6px;cursor:pointer;}
+
+/*内容*/
+div.content{
+	position:relative;
+	z-index:1000;
+	left:281px;
+	float:left;
+	width:750px;
+	padding:20px 20px 1000px 20px;
+	border-right-style:solid;
+	border-right-color:#aaa;
+	border-width: 1px;
+	background:rgba(231,231,231,0.5);
+}
+p{padding-left:10px;}
+div.content img{
+	display: block;
+	margin:10px auto 10px auto;
+}
+div.content ul li{
+	list-style:inside;
+	margin:10px 0 10px 0;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;		/* Opera */
+}
+div.content ol li {
+	list-style:inside;
+	list-style-type: decimal;
+	margin:10px 0 10px 0;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;		/* Opera */
+}
+
+h1{
+	height:30px;
+	margin:39px 0 10px 0;
+	padding:5px;
+	font-size:30px;
+	line-height:30px;
+	color:#000;
+	background:rgba(50,200,50,0.1);
+	border-bottom-style:solid;
+	border-bottom-color:#555;
+	border-width:4px;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;			/* Opera */
+}
+h1 a{text-decoration: none;}
+h2{
+	height:22px;
+	margin:22px 0 10px 0;
+	padding:5px;
+	font-size:22px;
+	line-height:22px;
+	color:#333;
+	border-bottom-style:solid;
+	border-bottom-color:#888;
+	border-width:2px;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;			/* Opera */
+}
+h2 a{text-decoration: none;}
+h3{
+	height:18px;
+	margin:20px 0 10px 0;
+	padding:5px;
+	font-size:18px;
+	line-height:18px;
+	color:#555;
+	border-bottom-style:solid;
+	border-bottom-color:#aaa;
+	border-width: 1px;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;			/* Opera */
+}
+h3 a{text-decoration: none;}
+h4{
+	height:16px;
+	margin:16px 0 10px 0;
+	padding:5px;
+	font-size:16px;
+	line-height:16px;
+	color:#777;
+	border-bottom-style:dotted;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;		/* Opera */
+}
+h4 a{text-decoration: none;}
+h5{
+	height:15px;
+	margin:15px 0 10px 0;
+	padding:5px;
+	font-size:15px;
+	line-height:15px;
+	color:#888;
+	border-bottom-style:none;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;		/* Opera */
+}
+h5 a{text-decoration: none;}
+h6{
+	height:14px;
+	margin:14px 0 10px 0;
+	padding:3px;
+	font-size:14px;
+	line-height:14px;
+	color:#888;
+	border-bottom-style:none;
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;		/* Opera */
+}
+h6 a{text-decoration: none;}
+
+
+/*文章目录*/
+div.ArticleContents{
+	position:fixed;
+	z-index:10;
+	left:1122px;
+	min-width:300px;
+	height:100%;
+	padding:20px;
+	font-family:"Microsoft Yahei";
+	background:rgba(231,231,231,0.3);
+	border-right-style:solid;
+	border-right-color:#ccc;
+	border-width: 1px;
+	overflow:hidden;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+	color:#999;
+	transition:color 0.5s;
+	-moz-transition:color 0.5s;		/* Firefox 4 */
+	-webkit-transition:color 0.5s;	/* Safari 和 Chrome */
+	-o-transition:color 0.5s;		/* Opera */
+	
+}
+div.ArticleContents:hover{color:#000;}
+
+div.ArticleContents span.hol {padding-right:6px;}
+
+div.ArticleContents a.contentA1{font-weight:Bold;color:#555;}
+div.ArticleContents li{cursor:pointer;}
+div.ArticleContents li:hover{text-decoration:underline;color:#00c;}
+div.ArticleContents li.contentA1{font-size:14px;font-weight:Bold;margin-top:12px;}
+div.ArticleContents li.contentA2{font-size:10px;padding-left:15px;font-weight:Bold;}
+div.ArticleContents li.contentA3{font-size:6px;padding-left:30px;}
+
+div.ArticleContents span.hol{color:#aaa}
+
+table {
+	overflow-x: auto;
+	padding:10px;
+	border-collapse: collapse;
+    border-spacing: 0;
+	margin:20px auto 20px auto;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.6);
+}
+thead{
+	background:#cce;
+	border-collapse: collapse;
+    border: 1px solid #777;
+	padding:3px 7px 2px 7px;
+}
+td{
+	border-collapse: collapse;
+    border: 1px solid #777;
+	padding:3px 7px 2px 7px;
+}
+tr{
+	border-collapse: collapse;
+    border: 1px solid #777;
+}
+tr.even{
+	background:#dde;
+}
+tr.odd{
+	background:#dee;
+}
+
+th{
+	border-collapse: collapse;
+    border: 1px solid #777;
+	padding:3px 7px 2px 7px;
+}
+
+blockquote{
+	background:#ccc;
+	padding-left:20px;
+	padding-right:20px;
+	border-radius:3px;
+	border-style:solid;
+	border-color:#aaa;
+	border-width: 1px;
+	border-left-width:6px;
+	border-left-color:#77a;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.6);
+	transition: background 0.45s;
+	-moz-transition: background 0.45s;		/* Firefox 4 */
+	-webkit-transition: background 0.45s;	/* Safari 和 Chrome */
+	-o-transition: background 0.45s;			/* Opera */
+}
+
+p{margin:20px 0 20px 0;}
+li p {margin:0;}

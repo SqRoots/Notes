@@ -1,0 +1,12 @@
+set statistics time on
+set statistics io on
+
+
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+
+SET NOCOUNT ON;
+
+SET DATEFIRST 1

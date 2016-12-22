@@ -1,0 +1,1 @@
+pandoc *.md -f markdown -t html -o 01.html --mathjax --no-highlight

@@ -1,0 +1,164 @@
+--创建临时表
+IF OBJECT_ID('TEMPDB.DBO.#UserData') IS NOT NULL Drop Table #UserData;
+CREATE TABLE #UserData(
+[TransID]				[bigint]		NOT NULL,	--TransID
+[QID]					[varchar](128)	NOT NULL,	--QID	
+[FirstPayTime]			[datetime]		NULL,		--首次创建时间(inner_cre_time,用Trans_id代替)
+[FirstPayAmount]		[bigint]		NULL,		--首次交易金额
+[FirstPayProduct]		[varchar](100)	NULL,		--首次购买物品
+[FirstTransService]		[varchar](50)	NULL,		--首次交易类型
+[FirstPayChannel]		[varchar](30)	NULL,		--首次交易渠道
+[FirstPayIP]			[varchar](30)	NULL,		--首次交易IP
+[InnerTradeCode]		[varchar](64)	NULL,		--首次交易InnerTradeCode
+);
+ALTER TABLE #UserData ADD CONSTRAINT PK_UserData PRIMARY KEY([QID],[TransID]);
+IF OBJECT_ID('TEMPDB.DBO.#UserDataU') IS NOT NULL Drop Table #UserDataU;
+CREATE TABLE #UserDataU(
+[TransID]				[bigint]		NOT NULL,	--TransID
+[QID]					[varchar](128)	NOT NULL,	--QID	
+[FirstPayTime]			[datetime]		NULL,		--首次创建时间(inner_cre_time,用Trans_id代替)
+[FirstPayAmount]		[bigint]		NULL,		--首次交易金额
+[FirstPayProduct]		[varchar](100)	NULL,		--首次购买物品
+[FirstTransService]		[varchar](50)	NULL,		--首次交易类型
+[FirstPayChannel]		[varchar](30)	NULL,		--首次交易渠道
+[FirstPayIP]			[varchar](30)	NULL,		--首次交易IP
+[InnerTradeCode]		[varchar](64)	NULL,		--首次交易InnerTradeCode
+);
+ALTER TABLE #UserDataU ADD CONSTRAINT PK_UserDataU PRIMARY KEY([QID],[TransID]);
+IF OBJECT_ID('TEMPDB.DBO.#UserDataS') IS NOT NULL Drop Table #UserDataS;
+CREATE TABLE #UserDataS(
+[QID]					[varchar](128)	NOT NULL,	--QID
+[PayTotalAll]			[bigint]		NULL,		--交易总额
+[PayCountALL]			[bigint]		NULL,		--交易总次数
+[PayMaxALL]				[bigint]		NULL,		--最大交易金额
+[PayTotalSucc]			[bigint]		NULL,		--成功交易总额
+[PayCountSucc]			[bigint]		NULL,		--成功交易总次数
+[PayMaxSucc]			[bigint]		NULL,		--成功最大交易金额
+);
+ALTER TABLE #UserDataS ADD CONSTRAINT PK_UserDataS PRIMARY KEY([QID]);
+GO
+-------------------------------------------------------------
+--------------------------declare----------------------------
+-------------------------------------------------------------
+--声明变量
+declare 
+	@StartTime as varchar(10),			--开始日期
+	@StartTableNumber as varchar(4),	--开始表数
+	@EndTableNumber as varchar(4),		--结束表数
+	@SQL as nvarchar(max),				--SQL语句
+	@DBN as varchar(4),					--数据库数
+	@ProductName as varchar(30);		--adfasdf
+set @StartTime		='2012-07-01';	--包含此月
+set @EndTableNumber	='1511'			--包含此月
+set @StartTableNumber=substring(@StartTime,3,2)+substring(@StartTime,6,2);
+-------------------------------------------------------------
+---------------------------While-----------------------------
+-------------------------------------------------------------
+--开始循环
+While @StartTableNumber<=@EndTableNumber
+Begin
+--更新数据
+	If @StartTime>='2012-07-01' and @StartTime<'2014-04-01' Begin Set @DBN='133'; Set @ProductName='a.product_name'; End;
+	If @StartTime>='2014-04-01' and @StartTime<'2015-05-01' Begin Set @DBN='31' ; Set @ProductName='""'; End;
+	If @StartTime>='2015-05-01'								Begin Set @DBN='10' ; Set @ProductName='a.product_name'; End;
+
+	Truncate TABLE [accsys].[dbo].[newTempData];
+Insert into [accsys].[dbo].[newTempTime] (StartTableNumber,Note,[NewTempTime]) select @StartTableNumber StartTableNumber,'Start' Note,getdate() [NewTempTime];
+	Set @SQL=N'
+	Insert into [accsys].[dbo].[newTempData]
+				([TransID],[QID],[CreateTime],[ReturnTime],[TransService],[PayChannel],[PayAmount],[ProductName],[ClientIP],[InnerTradeCode],[Succ])
+		Select	 [TransID],[QID],[CreateTime],[ReturnTime],[TransService],[PayChannel],[PayAmount],[ProductName],[ClientIP],[InnerTradeCode],[Succ]
+			From OpenQuery(toaccsys'+@DBN+',
+			''select
+				a.trans_id				TransID,
+				a.buyer_user_code		QID,
+				a.inner_cre_time		CreateTime,
+				a.pay_ret_time			ReturnTime,
+				a.trans_service			TransService,
+				a.pay_channel			PayChannel,
+				a.pay_amount			PayAmount,
+				'+@ProductName+'		ProductName,
+				a.client_ip				ClientIP,
+				a.inner_trade_code		InnerTradeCode,
+				a.inner_req_res_flag	Succ
+			from g_trans_log_'+@StartTableNumber+' a
+			where a.buyer_user_code>10000000;'') b;'
+	exec(@SQL);
+Insert into [accsys].[dbo].[newTempTime] (StartTableNumber,Note,[NewTempTime]) select @StartTableNumber StartTableNumber,'GetData-End' Note,getdate() [NewTempTime];
+-------------------------------------------------------------
+------------------------UserDataFirst------------------------
+-------------------------------------------------------------
+--筛选数据
+	Truncate Table #UserData;
+	Insert into #UserData	([TransID],[QID],[FirstPayTime],[FirstPayAmount],[FirstPayProduct],[FirstTransService],[FirstPayChannel],[FirstPayIP],[InnerTradeCode])
+					Select	 TransID,QID,CreateTime,PayAmount,ProductName,TransService,PayChannel,ClientIP,InnerTradeCode
+						from [accsys].[dbo].[newTempData] a
+						where not exists (Select 1 From [accsys].[dbo].[newTempData] b Where a.QID=b.QID and a.TransID>b.TransID);
+--合并数据
+	Merge [accsys].[dbo].[newUserDataFirst] a
+	Using #UserData b
+		On a.[QID]=b.[QID]
+	When Not Matched
+		Then Insert ([QID],[FirstPayTime],[FirstPayAmount],[FirstPayProduct],[FirstTransService],[FirstPayChannel],[FirstPayIP],[InnerTradeCode])
+			VALUES	(b.[QID],b.[FirstPayTime],b.[FirstPayAmount],b.[FirstPayProduct],b.[FirstTransService],b.[FirstPayChannel],b.[FirstPayIP],b.[InnerTradeCode]);
+Insert into [accsys].[dbo].[newTempTime] (StartTableNumber,Note,[NewTempTime]) select @StartTableNumber StartTableNumber,'UserDataFirst-End' Note,getdate() [NewTempTime];
+-------------------------------------------------------------
+----------------------UserDataFirstSucc----------------------
+-------------------------------------------------------------
+--筛选数据
+	Truncate Table #UserData;
+	Insert into #UserData	([TransID],[QID],[FirstPayTime],[FirstPayAmount],[FirstPayProduct],[FirstTransService],[FirstPayChannel],[FirstPayIP],[InnerTradeCode])
+					Select	 TransID,QID,ReturnTime,PayAmount,ProductName,TransService,PayChannel,ClientIP,InnerTradeCode
+						from [accsys].[dbo].[newTempData] a
+						where Succ=2 and not exists (Select 1 From [accsys].[dbo].[newTempData] b Where a.QID=b.QID and b.Succ=2 and a.ReturnTime>b.ReturnTime);
+
+	Truncate Table #UserDataU;
+	Insert into #UserDataU	([TransID],[QID],[FirstPayTime],[FirstPayAmount],[FirstPayProduct],[FirstTransService],[FirstPayChannel],[FirstPayIP],[InnerTradeCode])
+					Select	 [TransID],[QID],[FirstPayTime],[FirstPayAmount],[FirstPayProduct],[FirstTransService],[FirstPayChannel],[FirstPayIP],[InnerTradeCode]
+						from #UserData a
+						where not exists (Select 1 From #UserData b Where a.QID=b.QID and a.TransID>b.TransID);
+--合并数据
+	Merge [accsys].[dbo].[newUserDataFirstSucc] a
+	Using #UserDataU b
+		On a.[QID]=b.[QID]
+	When Not Matched
+		Then Insert ([QID],[FirstPayTimeSucc],[FirstPayAmountSucc],[FirstPayProductSucc],[FirstTransServiceSucc],[FirstPayChannelSucc],[FirstPayIPSucc],[InnerTradeCodeSucc])
+			VALUES	(b.[QID],b.[FirstPayTime],b.[FirstPayAmount],b.[FirstPayProduct],b.[FirstTransService],b.[FirstPayChannel],b.[FirstPayIP],b.[InnerTradeCode]);
+Insert into [accsys].[dbo].[newTempTime] (StartTableNumber,Note,[NewTempTime]) select @StartTableNumber StartTableNumber,'UserDataFirstSucc-End' Note,getdate() [NewTempTime];
+-------------------------------------------------------------
+-------------------------UserDataSum-------------------------
+-------------------------------------------------------------
+--筛选数据
+	Truncate Table #UserDataS;
+	Insert into #UserDataS	(QID,PayTotalAll,PayCountALL,PayMaxALL,PayTotalSucc,PayCountSucc,PayMaxSucc)
+					Select	QID,
+							Sum(PayAmount)	PayTotalAll,
+							Count(*)		PayCountALL,
+							Max(PayAmount)	PayMaxALL,
+							Sum(case when Succ=2 then PayAmount else 0 end)		PayTotalSucc,
+							Sum(case when Succ=2 then 1 else 0 end)				PayCountSucc,
+							Max(case when Succ=2 then PayAmount else 0 end)		PayMaxSucc
+						from [accsys].[dbo].[newTempData] a
+						group by a.[QID];
+--合并数据
+	Merge [accsys].[dbo].[newUserDataSum] a
+	Using #UserDataS b
+		On a.[QID]=b.[QID]
+	When Matched
+		Then Update	Set 
+			a.PayTotalAll=	ISNULL(a.PayTotalAll,0)+b.PayTotalAll,
+			a.PayCountALL=	ISNULL(a.PayCountALL,0)+b.PayCountALL,
+			a.PayMaxALL=	ISNULL(a.PayMaxALL,0)+b.PayMaxALL,
+			a.PayTotalSucc=	ISNULL(a.PayTotalSucc,0)+b.PayTotalSucc,
+			a.PayCountSucc=	ISNULL(a.PayCountSucc,0)+b.PayCountSucc,
+			a.PayMaxSucc=	ISNULL(a.PayMaxSucc,0)+b.PayMaxSucc
+	When Not Matched
+		Then Insert ([QID],PayTotalAll,PayCountALL,PayMaxALL,PayTotalSucc,PayCountSucc,PayMaxSucc)
+			VALUES	(b.[QID],b.PayTotalAll,b.PayCountALL,b.PayMaxALL,b.PayTotalSucc,b.PayCountSucc,b.PayMaxSucc);
+Insert into [accsys].[dbo].[newTempTime] (StartTableNumber,Note,[NewTempTime]) select @StartTableNumber StartTableNumber,'UserDataSum-End' Note,getdate() [NewTempTime];
+--时期增加1个月
+	Set @StartTime=cast(dateadd(month,1,@StartTime) as date);
+	set @StartTableNumber=substring(@StartTime,3,2)+substring(@StartTime,6,2);
+End
+Drop Table #UserData;
+Drop Table #UserDataS;

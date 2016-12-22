@@ -1,0 +1,63 @@
+## 检查字段是否为NULL，如果是则返回替换值
+
+	ISNULL ( check_expression , replacement_value )
+
+## 如果TB1存在，则删除TB1。
+
+	If OBJECT_ID('TB1') is Not Null Drop Table TB1;							--普通表
+	IF OBJECT_ID('TEMPDB.DBO.#UserData') IS NOT NULL Drop Table #UserData;	--临时表
+
+## 日期
+
+	datename(DateType, getdate()) 返回相应的日期类型，比如：小时，分钟，星期，月份，日，年
+	datename(weekday, getdate()) 返回星期n
+	类似的还有：DatePart()
+
+## 字符串函数
+
+	http://www.cnblogs.com/andy2005/archive/2007/12/04/981864.html
+
+## 保留小数
+
+	cast(1.000000 as  numeric(10,4))
+
+## 执行字符串
+
+	exec('select 3');
+	exec sp_executesql N'Select 3+3'
+
+## 累加和
+
+	表“YS”如下
+	UserID	Year	Salary 
+	1	2000	1000
+	1	2001	2000
+	1	2002	3000
+	1	2003	4000
+	2	2000	1000
+	2	2001	2000
+	2	2002	3000
+	2	2003	4000
+
+	Select UserID
+		,Year
+		,Salary
+		,(Select Sum(Salary) From YS b Where a.UserID=b.UserID and b.Year<=a.Year) acSalary  
+		From YS a
+
+	得到如下结果集
+	UserID	Year	Salary	acSalary
+	1	2000	1000	1000
+	1	2001	2000	3000
+	1	2002	3000	6000
+	1	2003	4000	10000
+	2	2000	1000	1000
+	2	2001	2000	3000
+	2	2002	3000	6000
+	2	2003	4000	10000
+
+
+
+## 按A列分组，按B列排序，计算C累计和
+
+	Select A,B,(Select SUM(C) From TB where A=a.A and B<=a.B) AcC From TB a

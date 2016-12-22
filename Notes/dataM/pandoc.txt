@@ -1,0 +1,41 @@
+pandoc --mathjax --no-highlight -o 01.html *.md
+
+pandoc --mathjax --highlight-style kate -o 01.html *.md
+
+
+pandoc --mathjax --highlight-style kate -o test3.html th.md
+pandoc --mathjax --no-highlight -o test3.html th.md
+pandoc --no-tex-ligatures --no-highlight -o test3.html th.md
+
+
+
+pandoc th.md --latexmathml --highlight-style kate -o test3.html
+
+
+
+
+Syntax highlighting of delimited code blocks:
+
+pandoc code.text -s --highlight-style pygments -o example18a.html
+pandoc code.text -s --highlight-style kate -o example18b.html
+pandoc code.text -s --highlight-style monochrome -o example18c.html
+pandoc code.text -s --highlight-style espresso -o example18d.html
+pandoc code.text -s --highlight-style haddock -o example18e.html
+pandoc code.text -s --highlight-style tango -o example18f.html
+pandoc code.text -s --highlight-style zenburn -o example18g.html
+
+
+
+TeX math in HTML:
+
+pandoc math.text -s -o mathDefault.html
+pandoc math.text -s --mathml -o mathMathML.html
+pandoc math.text -s --webtex -o mathWebTeX.html
+pandoc math.text -s --mathjax -o mathMathJax.html
+pandoc math.text -s --latexmathml -o mathLaTeXMathML.html
+
+
+
+LaTeX:
+
+pandoc -s README -o example4.tex

@@ -1,0 +1,268 @@
+pre.prettyprint.lang-mathematica,pre.prettyprint.lang-mma {
+	font-weight: 700
+}
+
+
+
+@media print,projection {
+	#feed-link-text {
+		display: none
+	}
+
+	.spoiler {
+		color: #000
+	}
+
+	.spoiler a,.spoiler a:visited {
+		color: #000;
+		text-decoration: underline
+	}
+
+	.str {
+		color: #060
+	}
+
+	.kwd {
+		color: #006;
+		font-weight: 700
+	}
+
+	.com {
+		color: #600;
+		font-style: italic
+	}
+
+	.typ {
+		color: #404;
+		font-weight: 700
+	}
+
+	.lit {
+		color: #044
+	}
+
+	.pun {
+		color: #440
+	}
+
+	.pln {
+		color: #000
+	}
+
+	.tag {
+		color: #006;
+		font-weight: 700
+	}
+
+	.atn {
+		color: #404
+	}
+
+	.atv {
+		color: #060
+	}
+
+	* {
+		position: relative
+	}
+
+	pre {
+		max-height: none;
+		display: block;
+		width: 600px;
+		height: auto;
+		overflow-x: auto;
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap!important;
+		white-space: -pre-wrap;
+		white-space: -o-pre-wrap;
+		word-wrap: break-word;
+		clear: both
+	}
+
+	code,pre {
+		font-size: 9pt!important
+	}
+}
+
+@media screen {
+	.str {
+		color: # 833
+	}
+
+	.mma_msg {
+		color: #833;
+		font-style: italic
+	}
+
+	.mma_use {
+		color: # 833;
+		font - weight: bold
+	}
+
+	.mma_iot {
+		color: #555;
+		font-weight: 700
+	}
+
+	.atn {
+		color: # 326ab3;
+		font - weight: bold
+	}
+
+	.com {
+		color: #555
+	}
+
+	.kwd {
+		color: # 000
+	}
+
+	.atv {
+		color: #060;
+		font-style: italic
+	}
+
+	.atn {
+		color: # 326ab3;
+		font - weight: bold
+	}
+
+	.tag {
+		color: #000;
+		font-weight: 700
+	}
+
+	.lit {
+		color: # 833
+	}
+
+	.pln {
+		color: #326ab3
+	}
+
+	.pun {
+		color: # 000
+	}
+}
+
+.prettyprint {
+	display: block;
+	color: #393318
+}
+
+.str {
+	color: #E66
+}
+
+.kwd {
+	color: #00f
+}
+
+.com {
+	color: gray
+}
+
+.typ {
+	color: #00f
+}
+
+.lit {
+	color: maroon
+}
+
+.pun {
+	color: #000
+}
+
+.pln {
+	color: #000
+}
+
+.tag {
+	color: maroon
+}
+
+.atn {
+	color: red
+}
+
+.atv {
+	color: #00f
+}
+
+.dec {
+	color: purple
+}
+
+.prettyprint.lang-mma .str {
+	color: #666
+}
+
+.prettyprint.lang-mma .mma_msg {
+	color: #833;
+	font-style: italic
+}
+
+.prettyprint.lang-mma .mma_use {
+	color: #833;
+	font-weight: 700
+}
+
+.prettyprint.lang-mma .mma_iot {
+	color: #555;
+	font-weight: 700
+}
+
+.prettyprint.lang-mma .atn {
+	color: #326AB3;
+	font-weight: 700
+}
+
+.prettyprint.lang-mma .com {
+	color: #999
+}
+
+.prettyprint.lang-mma .kwd {
+	color: #000
+}
+
+.prettyprint.lang-mma .atv {
+	color: #060;
+	font-style: italic
+}
+
+.prettyprint.lang-mma .atn {
+	color: #326AB3;
+	font-weight: 700
+}
+
+.prettyprint.lang-mma .tag {
+	color: #000;
+	font-weight: 700
+}
+
+.prettyprint.lang-mma .lit {
+	color: #833
+}
+
+.prettyprint.lang-mma .pln {
+	color: #002CC3
+}
+
+.prettyprint.lang-mma .pun {
+	color: #000
+}
+
+ol.linenums {
+	margin - top: 0;
+	margin - bottom: 0
+}
+
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 {
+	list - style - type: none
+}
+
+li.L1,li.L3,li.L5,li.L7,li.L9 {
+	background: # eee
+}

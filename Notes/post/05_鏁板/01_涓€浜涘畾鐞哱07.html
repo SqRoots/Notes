@@ -1,0 +1,24 @@
+<h1 id="博弈论">博弈论</h1>
+<h2 id="策梅洛定理-博弈论"><a href="https://zh.wikipedia.org/wiki/%E7%AD%96%E6%A2%85%E6%B4%9B%E5%AE%9A%E7%90%86_%28%E5%8D%9A%E5%BC%88%E8%AB%96%29">策梅洛定理 (博弈论)</a></h2>
+<blockquote>
+<p>策梅洛定理（英语：Zermelo's theorem）是博弈论的一条定理，以恩斯特·策梅洛命名。定理表示在二人的有限游戏中，如果双方皆拥有完全的资讯，并且运气因素并不牵涉在游戏中，那先行或后行者当一必有一方有必胜/必不败的策略。若运用至国际象棋，则策梅洛定理表示“要么黑方有必胜之策略、要么白方有必胜之策略、要么双方也有必不败之策略”。</p>
+<p>策梅洛的论文于1913年以德文发表，并被Ulrich Schwalbe和Paul Walker于1997年译为英文。</p>
+</blockquote>
+<h1 id="统计">统计</h1>
+<h2 id="本福特定律benfords-law"><a href="https://en.wikipedia.org/wiki/Benford%27s_law">本福特定律（Benford's law）</a></h2>
+<h3 id="定律">定律</h3>
+<p>在<span class="math inline">\(n\)</span>进制数中，如果一组数据的首位数字<span class="math inline">\(d\)</span>的出现概率为</p>
+<p><span class="math display">\[\operatorname{P}\left( d \right)={{\log }_{n}}\left( d+1 \right)-{{\log }_{n}}\left( d \right)={{\log }_{n}}\left( 1+\frac{1}{d} \right)\]</span></p>
+<p>则称这组数据满足本福特定律。 <img src="BenfordLow.png" /></p>
+<h3 id="理解">理解</h3>
+<p>这组数据肯定不是随机产生的，不然，首位数字应该服从均匀分布。注意到在公式中出现了对数函数，那么这组数据的产生过程应该和对数有关，实际上是对数函数的反函数——指数函数。 根据上面的公式，在满足本福特定律的一组数据中，首位数字小于等于<span class="math inline">\(d\)</span>的概率为</p>
+<p><span class="math display">\[{{p}_{d}}:=\operatorname{P}\left( \delta \le d \right)={{\log }_{n}}\left( d+1 \right)\]</span></p>
+<p>即<span class="math inline">\(d={{n}^{{{p}_{d}}}}-1\)</span>，从形式上可以推测：这组数据应该是由指数增长得到的。证明：<a href="http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1042&amp;context=rgp_rsr">A Statistical Derivation of the Significant-Digit Law (PDF)</a>。</p>
+<h3 id="描述">描述</h3>
+<p>本福特定律，也称为本福特法则，说明一堆从实际生活得出的数据中，以1为首位数字的数的出现机率约为总数的三成，接近期望值1/9的3倍。推广来说，越大的数，以它为首几位的数出现的机率就越低。它可用于检查各种数据是否有造假。</p>
+<h3 id="历史">历史</h3>
+<ul>
+<li>1881年，天文学家西蒙·纽康发现对数表包含以1起首的数那首几页较其他页破烂。可是，亦可以以任何书起首数页也会较破烂这个观点解释。这个故事可能是虚构的。</li>
+<li>1938年，物理学家法蘭克·本福特重新发现这个现象，还通过了检查许多数据来证实这点。</li>
+<li>2009年，西班牙数学家在素数中发现了一种新模式，并且惊讶于为何现在才为人发现。虽然素数一般被认为是随机分布的，但西班牙数学家发现素数数列中每个素数的首位数字有明显的分布规律，它可以被描述了素数的本福特定律。这项新发现除了提供对素数属性的新洞见之外，还能应用于欺骗检测和股票市场分析等领域。</li>
+</ul>

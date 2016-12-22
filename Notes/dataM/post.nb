@@ -1,0 +1,418 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16055,        409]
+NotebookOptionsPosition[     15258,        378]
+NotebookOutlinePosition[     15618,        394]
+CellTagsIndexPosition[     15575,        391]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"path", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"outPath", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ParentDirectory", "[", "path", "]"}], ",", "\"\<post\>\""}], 
+     "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"postPath", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"path", ",", "\"\<post\>\""}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"procPath", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"path", ",", "\"\<process\>\""}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"postPaths", "=", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<*.md\>\"", ",", 
+     RowBox[{"{", "postPath", "}"}], ",", "Infinity"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"StringReplace", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"postPath", "\[Rule]", "\"\<\>\""}]}], "]"}], "&"}], "/@", 
+   "postPaths"}], "//", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.6629578017331715`*^9, 3.662957832871171*^9}, {
+  3.662957941211171*^9, 3.6629579710911713`*^9}, {3.662958005270171*^9, 
+  3.6629580221241713`*^9}, {3.6629580624401712`*^9, 3.6629580629781713`*^9}, {
+  3.662958108274171*^9, 3.6629582095251713`*^9}, {3.6629617120856714`*^9, 
+  3.6629617549956713`*^9}, {3.6630279261711044`*^9, 3.6630279507425613`*^9}, {
+  3.663028390547537*^9, 3.663028440957865*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"\\\\01_Mathematica\\\\01_\:4e00\:4e9b\:4e0e-Mathematica-\:6709\
+\:5173\:7684\:7f51\:7ad9\\\\01_\:4e00\:4e9b\:4e0e-Mathematica-\:6709\:5173\
+\:7684\:7f51\:7ad9.md\"\>"},
+     {"\<\"\\\\01_Mathematica\\\\02_Mathematica-10-2-\:51fd\:6570\:4e2d\:6587\
+\:5bf9\:7167\:8868\\\\Mathematica-10-2-\:51fd\:6570\:4e2d\:6587\:5bf9\:7167\
+\:8868.md\"\>"},
+     {"\<\"\\\\02_GitHub\\\\03_GitHub\:5165\:95e8\\\\GitHub\:5165\:95e8.md\"\>\
+"},
+     {"\<\"\\\\02_GitHub\\\\04_\:5173\:4e8eMarkdown\\\\\:5173\:4e8eMarkdown.\
+md\"\>"},
+     {"\<\"\\\\05_\:51b7\:77e5\:8bc6\\\\\:51b7\:77e5\:8bc6.md\"\>"},
+     {"\<\"\\\\06_\:5c0f\:5de5\:5177\\\\\:5c0f\:5de5\:5177.md\"\>"},
+     {"\<\"\\\\07_\:7279\:6b8a\:51fd\:6570\\\\\:7279\:6b8a\:51fd\:6570.md\"\>\
+"},
+     {"\<\"\\\\08_\:4e00\:4e9b\:5907\:5fd8\:5b9a\:7406\\\\\:4e00\:4e9b\:5907\
+\:5fd8\:5b9a\:7406.md\"\>"},
+     {"\<\"\\\\09_\:4e34\:65f6\:6536\:85cf\:7684\:7f51\:7ad9\\\\\:4e34\:65f6\
+\:6536\:85cf\:7684\:7f51\:7ad9.md\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6629579483721714`*^9, 3.662957971770171*^9}, {
+   3.6629580118131714`*^9, 3.6629580229461713`*^9}, 3.662958063836171*^9, {
+   3.662958109447171*^9, 3.6629581225751715`*^9}, 3.662958159678171*^9, {
+   3.662958201871171*^9, 3.662958210069171*^9}, 3.6629617571186714`*^9, 
+   3.663023954417748*^9, {3.6630279281012974`*^9, 3.6630279514856358`*^9}, {
+   3.663028433038786*^9, 3.663028441834865*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"pandocToHTML", "[", "path_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dir", "=", 
+        RowBox[{"DirectoryName", "@", "path"}]}], ",", "bat"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"bat", "=", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{"dir", ",", "\"\<pandoc.bat\>\""}], "}"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Export", "[", 
+       RowBox[{"bat", ",", 
+        RowBox[{
+        "\"\<@C:\\\\Users\\\\lixuan-ob\\\\AppData\\\\Local\\\\Pandoc\\\\\
+pandoc \>\"", "<>", 
+         RowBox[{"FileNameTake", "[", "path", "]"}], "<>", 
+         "\"\< --mathjax --highlight-style kate -o test3.html\>\""}], ",", 
+        "\"\<Text\>\""}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Run", "[", "bat", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.662959604646171*^9, 3.662959703942171*^9}, {
+   3.662959736010171*^9, 3.662959746256171*^9}, {3.662960608206732*^9, 
+   3.662960652671178*^9}, {3.662960699078818*^9, 3.6629607705419636`*^9}, {
+   3.662960825534462*^9, 3.662960827149624*^9}, {3.662961021683672*^9, 
+   3.6629610237006717`*^9}, {3.6629610855546713`*^9, 3.662961099685672*^9}, 
+   3.6629616699676714`*^9, 3.6629620604886713`*^9, 3.662962249968672*^9, {
+   3.6629623336206713`*^9, 3.662962338060672*^9}, {3.6630240006963754`*^9, 
+   3.6630240018574915`*^9}, 3.663024070937399*^9, {3.663024900174319*^9, 
+   3.663024907055007*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "pandocDir", "=", 
+     "\"\<C:\\\\Users\\\\lixuan-ob\\\\AppData\\\\Local\\\\Pandoc\\\\pandoc\>\"\
+"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"process", "=", 
+     RowBox[{"StartProcess", "[", 
+      RowBox[{"$SystemShell", ",", 
+       RowBox[{"ProcessDirectory", "\[Rule]", 
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{"path", ",", "\"\<process\>\""}], "}"}], "]"}]}]}], "]"}]}],
+     ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"WriteLine", "[", 
+     RowBox[{"process", ",", 
+      RowBox[{
+      "pandocDir", "<>", 
+       "\"\< aa.md --no-tex-ligatures --no-highlight kate -o \
+test4.html\>\""}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6630244241460857`*^9, 3.6630244865580854`*^9}, {
+   3.6630245494710855`*^9, 3.6630246084320855`*^9}, {3.6630246464219465`*^9, 
+   3.6630246468469887`*^9}, {3.663024766260929*^9, 3.663024830152317*^9}, {
+   3.6630249635706577`*^9, 3.6630250110854087`*^9}, {3.663025043921692*^9, 
+   3.6630250669469943`*^9}, {3.663025297947092*^9, 3.663025313695667*^9}, {
+   3.663025416212058*^9, 3.663025495361058*^9}, {3.663025534957058*^9, 
+   3.663025537506058*^9}, 3.663025600711058*^9, {3.663025686927058*^9, 
+   3.663025687198058*^9}, {3.6630257373520584`*^9, 3.663025740303058*^9}, 
+   3.663025807626058*^9, 3.6630259226610584`*^9, {3.6630261462750583`*^9, 
+   3.6630261588500586`*^9}, {3.663026443601058*^9, 3.663026526325058*^9}, {
+   3.663026753070058*^9, 3.6630267592420583`*^9}, {3.6630267954560585`*^9, 
+   3.6630267957740583`*^9}, {3.663026837351058*^9, 3.663026861537058*^9}, {
+   3.6630269458930583`*^9, 3.663026975835058*^9}, 3.6630270167420583`*^9, {
+   3.663027056138058*^9, 3.663027067072058*^9}, {3.6630272468240585`*^9, 
+   3.6630272741540585`*^9}, 3.6630274526074553`*^9, 3.663028465073865*^9}],
+
+Cell[BoxData[{
+ RowBox[{"ProcessStatus", "[", 
+  RowBox[{"process", ",", "\"\<Finished\>\""}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WriteLine", "[", 
+   RowBox[{"process", ",", "\"\<exit\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.663026936269058*^9, 3.663026936777058*^9}, 
+   3.663027018570058*^9, {3.663028470210865*^9, 3.663028470682865*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"KillProcess", "[", "process", "]"}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"CopyFile", "[", 
+  RowBox[{
+   RowBox[{"postPaths", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<E:/\>\"", ",", "\"\<aa.md\>\""}], "}"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<E:/\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"pandocToHTML", "[", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{"\"\<E:/\>\"", ",", "\"\<aa.md\>\""}], "}"}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.662961673310672*^9, 3.662961684060672*^9}, {
+  3.662961771461672*^9, 3.6629618769206715`*^9}, {3.6629619375626717`*^9, 
+  3.6629619394856715`*^9}, {3.6629619768936715`*^9, 3.6629619787316713`*^9}, {
+  3.6629620619976716`*^9, 3.6629620830146713`*^9}, {3.662962256999672*^9, 
+  3.6629622653756714`*^9}, {3.663025197198018*^9, 3.6630251981401124`*^9}}],
+
+Cell[BoxData["\<\"E:\\\\aa.md\"\>"], "Output",
+ CellChangeTimes->{
+  3.6629618779596715`*^9, 3.6629619398306713`*^9, 3.6629619813516717`*^9, 
+   3.6629620327616715`*^9, {3.6629620836626716`*^9, 3.6629621031046715`*^9}, {
+   3.6629622664706717`*^9, 3.6629622854086714`*^9}, 3.6629623467956715`*^9, 
+   3.663023961414448*^9, {3.6630240079110966`*^9, 3.6630240236326685`*^9}, 
+   3.663024075968902*^9, 3.6630244726570854`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"pandocToHTML", "[", 
+  RowBox[{"postPaths", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.662959163442171*^9, 3.6629591664101715`*^9}, {
+  3.6629607919101*^9, 3.662960800190928*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "pandocDir", "=", 
+   "\"\<C:\\\\Users\\\\lixuan-ob\\\\AppData\\\\Local\\\\Pandoc\\\\pandoc\>\""}\
+], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"process", "=", 
+    RowBox[{"StartProcess", "[", 
+     RowBox[{"$SystemShell", ",", 
+      RowBox[{"ProcessDirectory", "\[Rule]", "procPath"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"fds", "=", 
+     RowBox[{"FileNameSplit", "[", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"postPaths", "[", 
+         RowBox[{"[", "k", "]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"postPath", "~~", 
+          RowBox[{"\"\<\\\\\>\"", "..."}]}], "\[Rule]", "\"\<\>\""}]}], "]"}],
+       "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"order", "=", "k"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"level", "=", 
+     RowBox[{
+      RowBox[{"Length", "[", "fds", "]"}], "-", "1"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"nPathDirAll", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"First", "[", 
+        RowBox[{"StringCases", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", ":", 
+             RowBox[{"DigitCharacter", "..."}]}], "~~", "\"\<_\>\""}], 
+           "\[RuleDelayed]", "x"}]}], "]"}], "]"}], "&"}], "/@", "fds"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"nPathDir", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"{", 
+        RowBox[{"nPathDirAll", "[", 
+         RowBox[{"[", 
+          RowBox[{";;", 
+           RowBox[{"-", "2"}]}], "]"}], "]"}], "}"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"outPathDir", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"{", 
+        RowBox[{"outPath", ",", "nPathDir"}], "}"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"md", "=", 
+     RowBox[{"StringReplace", "[", 
+      RowBox[{
+       RowBox[{"DirectoryName", "@", 
+        RowBox[{"postPaths", "[", 
+         RowBox[{"[", "k", "]"}], "]"}]}], ",", 
+       RowBox[{
+       "\"\<\\\\dataM\\\\post\\\\\>\"", "\[Rule]", "\"\<\\\\post\\\\\>\""}]}],
+       "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"DirectoryQ", "[", "md", "]"}], "\[Equal]", "False"}], ",", 
+      RowBox[{"CreateDirectory", "[", "md", "]"}]}], "]"}], ";", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"DeleteFile", "[", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"procPath", ",", "\"\<*.*\>\""}], "}"}], "]"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"CopyFile", "[", 
+     RowBox[{
+      RowBox[{"postPaths", "[", 
+       RowBox[{"[", "k", "]"}], "]"}], ",", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"procPath", ",", "\"\<aa.md\>\""}], "}"}], "]"}]}], "]"}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"WriteLine", "[", 
+     RowBox[{"process", ",", 
+      RowBox[{
+      "pandocDir", "<>", 
+       "\"\< aa.md --no-tex-ligatures --no-highlight kate -o \>\"", "<>", 
+       RowBox[{"nPathDirAll", "[", 
+        RowBox[{"[", 
+         RowBox[{"-", "1"}], "]"}], "]"}], "<>", "\"\<.html\>\""}]}], "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6629592991031713`*^9, 3.6629593834921713`*^9}, {
+  3.6629594326621714`*^9, 3.662959433639171*^9}, {3.6629594836741714`*^9, 
+  3.662959488456171*^9}, {3.663028276907174*^9, 3.6630283764581285`*^9}, {
+  3.663028496050865*^9, 3.6630285071078653`*^9}, {3.6630285503838654`*^9, 
+  3.663028647335865*^9}, {3.663028688882865*^9, 3.6630287216078653`*^9}, {
+  3.663028795063865*^9, 3.6630288393978653`*^9}, {3.663028890335865*^9, 
+  3.663028893853865*^9}, {3.6630289801908655`*^9, 3.6630291503458652`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"DeleteFile", "::", "ioarg"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"I/O operation is not valid for \[NoBreak]\\!\\(\\*RowBox[{\
+\\\"\\\\\\\"C:\\\\\\\\\\\\\\\\inetpub\\\\\\\\\\\\\\\\wwwbiji\\\\\\\\\\\\\\\\\
+dataM\\\\\\\\\\\\\\\\process\\\\\\\\\\\\\\\\*.*\\\\\\\"\\\"}]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ioarg\\\", \
+ButtonNote -> \\\"DeleteFile::ioarg\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.663029107557865*^9, 3.6630291510688653`*^9}, 
+   3.6630292366318655`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CopyFile", "::", "filex"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot overwrite existing file \[NoBreak]\\!\\(\\*RowBox[{\
+\\\"\\\\\\\"C:\\\\\\\\\\\\\\\\inetpub\\\\\\\\\\\\\\\\wwwbiji\\\\\\\\\\\\\\\\\
+dataM\\\\\\\\\\\\\\\\process\\\\\\\\\\\\\\\\aa.md\\\\\\\"\\\"}]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/CopyFile/filex\\\", \
+ButtonNote -> \\\"CopyFile::filex\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.663029107557865*^9, 3.6630291510688653`*^9}, 
+   3.663029236665865*^9}]
+}, Open  ]]
+},
+WindowSize->{1188, 1022},
+WindowMargins->{{Automatic, 276}, {Automatic, 32}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (2015\:5e7412\:670810\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1566, 41, 132, "Input"],
+Cell[2149, 65, 1924, 40, 183, "Output"]
+}, Open  ]],
+Cell[4088, 108, 1607, 35, 152, "Input"],
+Cell[5698, 145, 1956, 39, 132, "Input"],
+Cell[7657, 186, 398, 8, 72, "Input"],
+Cell[8058, 196, 88, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[8171, 202, 912, 21, 72, "Input"],
+Cell[9086, 225, 423, 6, 31, "Output"]
+}, Open  ]],
+Cell[9524, 234, 240, 5, 31, "Input"],
+Cell[CellGroupData[{
+Cell[9789, 243, 4138, 104, 472, "Input"],
+Cell[13930, 349, 656, 12, 20, "Message"],
+Cell[14589, 363, 653, 12, 20, "Message"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,73 @@
+<h1 id="备份与还原">备份与还原</h1>
+<ul>
+<li>官网文档：<a href="http://dev.mysql.com/doc/refman/5.0/en/using-mysqldump.html">7.4 Using mysqldump for Backups</a></li>
+</ul>
+<h2 id="备份所有数据库">备份所有数据库</h2>
+<pre class="sql"><code>shell&gt; mysqldump --all-databases &gt; dump.sql</code></pre>
+<ul>
+<li>常用参数： <code>-u</code>，<code>-p</code>，<code>--events</code>，<code>--ignore-table=mysql.events</code></li>
+<li>参考：<a href="http://dev.mysql.com/doc/refman/5.5/en/mysqldump-sql-format.html">7.4.1 Dumping Data in SQL Format with mysqldump</a></li>
+</ul>
+<h2 id="还原所有数据库">还原所有数据库</h2>
+<pre class="sql"><code>shell&gt; mysql &lt; dump.sql</code></pre>
+<ul>
+<li>常用参数： <code>-u</code>，<code>-p</code></li>
+<li>参考：<a href="http://dev.mysql.com/doc/refman/5.5/en/reloading-sql-format-dumps.html">7.4.2 Reloading SQL-Format Backups</a></li>
+</ul>
+<h2 id="导出查询结果">导出查询结果</h2>
+<pre class="sql"><code>mysql&gt; select * from myTable into outfile &#39;FilePath&#39;;</code></pre>
+<p>上面的方法，需要对文件有写权限才能顺利导出。</p>
+<pre class="sql"><code>shell&gt; mysql -u... -p myDatabase -e&quot;select * from myTable&quot; &gt; FilePath</code></pre>
+<h1 id="用户管理待整理">用户管理（待整理）</h1>
+<h2 id="设置root密码">设置root密码</h2>
+<p>方法1： 用SET PASSWORD命令</p>
+<pre class="sql"><code>shell&gt; mysql -u root
+mysql&gt; SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;newpass&#39;);</code></pre>
+<p>方法2：用mysqladmin</p>
+<pre class="sql"><code>　　shell&gt; mysqladmin -u root password &quot;newpass&quot;
+
+　　-- 如果root已经设置过密码，采用如下方法
+　　shell&gt; mysqladmin -u root password oldpass &quot;newpass&quot;</code></pre>
+<p>方法3： 用UPDATE直接编辑user表</p>
+<pre class="sql"><code>　　shell&gt; mysql -u root
+　　mysql&gt; use mysql;
+　　mysql&gt; UPDATE user SET Password = PASSWORD(&#39;newpass&#39;) WHERE user = &#39;root&#39;;
+　　mysql&gt; FLUSH PRIVILEGES;</code></pre>
+<h2 id="在丢失root密码的时候可以这样">在丢失root密码的时候，可以这样</h2>
+<pre class="sql"><code>　　shell&gt; mysqld_safe --skip-grant-tables
+　　shell&gt; mysql -u root mysql
+　　mysql&gt; UPDATE user SET password=PASSWORD(&quot;new password&quot;) WHERE user=&#39;root&#39;;
+　　mysql&gt; FLUSH PRIVILEGES;</code></pre>
+<h1 id="其它">其它</h1>
+<h2 id="函数">函数</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">分类</th>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">时间</td>
+<td align="left"><code>from_unixtime()</code></td>
+<td align="left">Unix时间戳 --&gt; 普通时间</td>
+</tr>
+<tr class="even">
+<td align="left">时间</td>
+<td align="left"><code>unix_timestamp()</code></td>
+<td align="left">普通时间 --&gt; Unix时间戳</td>
+</tr>
+<tr class="odd">
+<td align="left">IP</td>
+<td align="left"><code>inet_aton()</code></td>
+<td align="left">IP --&gt; bigint</td>
+</tr>
+<tr class="even">
+<td align="left">IP</td>
+<td align="left"><code>inet_ntoa()</code></td>
+<td align="left">bigint --&gt; IP</td>
+</tr>
+</tbody>
+</table>

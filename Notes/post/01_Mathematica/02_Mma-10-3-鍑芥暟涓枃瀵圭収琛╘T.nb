@@ -1,0 +1,276 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9410,        267]
+NotebookOptionsPosition[      8741,        238]
+NotebookOutlinePosition[      9099,        254]
+CellTagsIndexPosition[      9056,        251]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:5bfc\:5165\:6570\:636e", "Section",
+ CellChangeTimes->{{3.665295031667242*^9, 3.6652950336282415`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"da", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<funcc.txt\>\""}], 
+       "}"}], "]"}], ",", "\"\<Table\>\"", ",", 
+     RowBox[{"CharacterEncoding", "\[Rule]", "\"\<UTF8\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nda", "=", 
+   RowBox[{"da", "[", 
+    RowBox[{"[", 
+     RowBox[{";;", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "6"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"nda", "[", 
+    RowBox[{"[", 
+     RowBox[{";;", ",", 
+      RowBox[{"-", "1"}]}], "]"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringReplace", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"\"\<|\>\"", "\[Rule]", "\"\<&#124;\>\""}]}], "]"}], "&"}], "/@", 
+    RowBox[{"nda", "[", 
+     RowBox[{"[", 
+      RowBox[{";;", ",", 
+       RowBox[{"-", "1"}]}], "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ndas", "=", 
+   RowBox[{"GatherBy", "[", 
+    RowBox[{"nda", ",", 
+     RowBox[{
+      RowBox[{"StringTake", "[", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", "1"}], "]"}], "&"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6652950431942415`*^9, 3.6652950435502415`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\:5bfc\:51faMD", "Subsection",
+ CellChangeTimes->{{3.6652950552912416`*^9, 3.665295056341242*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "head", "=", 
+     "\"\<| \:5e8f\:53f7 | \:51fd\:6570\:540d | \:4e2d\:6587\:542b\:610f |\n| \
+:--- | :--- | :--- |\\n\>\""}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"url", "[", "fun_", "]"}], ":=", 
+     RowBox[{
+     "\"\<[\>\"", "<>", "fun", "<>", 
+      "\"\<](http://reference.wolfram.com/language/ref/\>\"", "<>", "fun", 
+      "<>", "\"\<.html)\>\""}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"f", "[", "data_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"title", "=", 
+        RowBox[{"\"\<\\n## \>\"", "<>", 
+         RowBox[{"ToUpperCase", "[", 
+          RowBox[{"StringTake", "[", 
+           RowBox[{
+            RowBox[{"data", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "1"}], "]"}], "]"}], ",", "1"}], "]"}], "]"}],
+          "<>", "\"\<\\n\>\""}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"title", "<>", "head", "<>", 
+       RowBox[{"StringRiffle", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"\"\<| \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"k", "++"}], "]"}], "<>", "\"\< | \>\"", "<>", 
+            RowBox[{"url", "[", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< | \>\"", "<>", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "<>", "\"\< |\>\""}], "&"}], "/@",
+           "data"}], ",", "\"\<\\n\>\""}], "]"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+        "\"\<funccForMarkdown.txt\>\""}], "}"}], "]"}], ",", 
+     RowBox[{"StringRiffle", "[", 
+      RowBox[{
+       RowBox[{"f", "/@", "ndas"}], ",", "\"\<\\n\>\""}], "]"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.665288399747594*^9, 3.6652883998536043`*^9}, {
+   3.6652884529769163`*^9, 3.6652884700816264`*^9}, {3.6652888004696627`*^9, 
+   3.665288853970662*^9}, {3.6652889488886623`*^9, 3.6652889494076624`*^9}, {
+   3.6652890970116625`*^9, 3.6652891175896626`*^9}, {3.6652892075566626`*^9, 
+   3.6652892089886627`*^9}, {3.6652894227046623`*^9, 
+   3.6652894412716627`*^9}, {3.665289474911662*^9, 3.6652894756416626`*^9}, {
+   3.6652897582496624`*^9, 3.6652897669386625`*^9}, {3.6652898237506623`*^9, 
+   3.665289941795401*^9}, {3.6652901024344635`*^9, 3.6652901200932293`*^9}, {
+   3.6652902049227114`*^9, 3.665290292597478*^9}, 3.6652939908402824`*^9, 
+   3.66529415213341*^9, {3.665295015039242*^9, 3.6652950420692415`*^9}, {
+   3.6652950815812416`*^9, 3.665295085028242*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.665294026567855*^9, 3.66529407172637*^9}, 
+   3.6652941538055773`*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\:5bfc\:51faHTML", "Subsection",
+ CellChangeTimes->{{3.665295064440242*^9, 3.6652950659812417`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"k", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"html", "=", 
+    RowBox[{"StringRiffle", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"\"\<<h2 id=\\\"\>\"", "<>", 
+         RowBox[{"StringTake", "[", 
+          RowBox[{
+           RowBox[{"ndas", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "1", ",", "1"}], "]"}], "]"}], ",", "1"}], 
+          "]"}], "<>", "\"\<\\\">\>\"", "<>", 
+         RowBox[{"StringTake", "[", 
+          RowBox[{
+           RowBox[{"ndas", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "1", ",", "1"}], "]"}], "]"}], ",", "1"}], 
+          "]"}], "<>", 
+         "\"\< . . .</h2>\n<table>\n<thead>\n<tr class=\\\"header\\\">\n<th \
+align=\\\"left\\\">\:5e8f\:53f7</th>\n<th align=\\\"left\\\">\:51fd\:6570\
+\:540d</th>\n<th align=\\\"left\\\">\:4e2d\:6587\:542b\:610f</th>\n</tr>\n\
+</thead>\n<tbody>\n\>\"", "<>", 
+         RowBox[{"StringRiffle", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"OddQ", "[", 
+                 RowBox[{"k", "+=", "1"}], "]"}], ",", 
+                "\"\<<tr class=\\\"odd\\\">\\n\>\"", ",", 
+                "\"\<<tr class=\\\"even\\\">\\n\>\""}], "]"}], "<>", 
+              "\"\<<td align=\\\"left\\\">\>\"", "<>", 
+              RowBox[{"ToString", "[", "k", "]"}], "<>", "\"\<</td>\\n\>\"", 
+              "<>", "\"\<<td align=\\\"left\\\"><a \
+href=\\\"http://reference.wolfram.com/language/ref/\>\"", "<>", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.html\\\">\>\"", "<>", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "<>", 
+              "\"\<</a></td>\\n<td align=\\\"left\\\">\>\"", "<>", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "<>", 
+              "\"\<</td>\\n</tr></tbody>\\n\>\""}], "&"}], "/@", 
+            RowBox[{"ndas", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}], ",", "\"\<\>\""}], "]"}], 
+         "<>", "\"\<</table>\>\""}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "ndas", "]"}]}], "}"}]}], "]"}], ",", 
+      "\"\<\\n\>\""}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+      "\"\<funccForHTML.txt\>\""}], "}"}], "]"}], ",", "html"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.6652942276469607`*^9, 3.6652945226454573`*^9}, {
+   3.665294553062499*^9, 3.6652948403852415`*^9}, {3.6652949085992417`*^9, 
+   3.6652949270832415`*^9}, {3.665295001108242*^9, 3.6652950085102415`*^9}, {
+   3.6652950713952417`*^9, 3.665295087684242*^9}, {3.665295117729242*^9, 
+   3.665295118577242*^9}, 3.665295163393242*^9}],
+
+Cell[BoxData["\<\"C:\\\\inetpub\\\\wwwbiji\\\\post\\\\01_Mathematica\\\\02_\
+Mma-10-3-\:51fd\:6570\:4e2d\:6587\:5bf9\:7167\:8868\\\\funccForHTML.txt\"\>"],\
+ "Output",
+ CellChangeTimes->{3.665295122229242*^9, 3.6652951638662415`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1858, 1022},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (2015\:5e7412\:670810\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 111, 1, 70, "Section"],
+Cell[694, 25, 1425, 45, 112, "Input"],
+Cell[CellGroupData[{
+Cell[2144, 74, 104, 1, 49, "Subsection"],
+Cell[2251, 77, 2915, 67, 212, "Input"],
+Cell[5169, 146, 119, 2, 31, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5325, 153, 106, 1, 41, "Subsection"],
+Cell[CellGroupData[{
+Cell[5456, 158, 3009, 70, 338, "Input"],
+Cell[8468, 230, 233, 3, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,77 @@
+<h1 id="学习资料">学习资料</h1>
+<ul>
+<li><a href="http://www.runoob.com/w3cnote/all-vim-cheatsheat.html">汇总</a></li>
+<li><a href="http://www.runoob.com/wp-content/uploads/2015/10/entry1.png">键位图－入门</a></li>
+<li><a href="http://www.runoob.com/wp-content/uploads/2015/10/advanced1.png">键位图－进阶</a></li>
+<li><a href="http://www.runoob.com/wp-content/uploads/2015/10/morden1.png">键位图－增强</a></li>
+<li><a href="http://www.runoob.com/wp-content/uploads/2015/10/text1.png">键位图－文字</a></li>
+</ul>
+<h1 id="常用命令">常用命令</h1>
+<p>下载命令可直接在Vim的命令模式下输入，但只当次有效；也可以在配置文件<code>/etc/vimrc</code>（有些系统是：<code>/etc/vim/vimrc</code>）中设置，永久有效。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">命令或参数</th>
+<th align="left">解释说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>&quot;</code></td>
+<td align="left">单行注释</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set nu</code></td>
+<td align="left">显示行号</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>set ai</code> 或 <code>set autoindent</code></td>
+<td align="left">自动缩进</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set smartindent</code></td>
+<td align="left">智能缩进</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>set cindent</code></td>
+<td align="left">针对C语言的自动缩进</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set tabstop=4</code></td>
+<td align="left">设置一个Tab键为4个空格</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>set shiftwidth=4</code></td>
+<td align="left">当行之间交错时使用4个空格</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set showmatch</code></td>
+<td align="left">自动匹配，当输入一个左括号时会匹配相应的右括号</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>syntax on</code></td>
+<td align="left">语法高亮</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set history=1000</code></td>
+<td align="left">历史记录行数</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>set background=dark</code></td>
+<td align="left">使用黑色背景</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set nocompatible</code></td>
+<td align="left">去掉有关vi一致性模式，避免以前版本的bug和局限</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>set guioptions-=T</code></td>
+<td align="left">去除vim的GUI版本中得toolbar</td>
+</tr>
+<tr class="even">
+<td align="left"><code>set ruler</code></td>
+<td align="left">在编辑过程中，在右下角显示光标位置的状态行</td>
+</tr>
+</tbody>
+</table>
+<p>更多参数可以参见配置文件<code>vimrc</code>，或参考：<a href="http://www.vim.org/docs.php">官方帮助文档</a></p>

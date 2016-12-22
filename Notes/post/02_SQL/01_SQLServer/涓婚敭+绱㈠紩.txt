@@ -1,0 +1,3 @@
+索引
+创建：唯一 非聚集 升序 包含例
+create UNIQUE index ix_OnlyChinaCity on  [accsys].[dbo].[OnlyChinaCity] (locID asc) include (CCity)

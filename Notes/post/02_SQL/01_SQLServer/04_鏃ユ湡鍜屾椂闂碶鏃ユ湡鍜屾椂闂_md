@@ -1,0 +1,51 @@
+# 常见的时期和时间函数
+| 函数 | 说明 |
+| :--- | :--- |
+| GETDATE() 	 | 返回当前日期和时间                  |
+| DATEPART() 	 | 返回日期/时间的单独部分             |
+| DATEADD() 	 | 在日期中添加或减去指定的时间间隔    |
+| DATEDIFF() 	 | 返回两个日期之间的时间              |
+| CONVERT() 	 | 用不同的格式显示日期/时间           |
+
+
+# 常用的日期和时间格式
+| 类型 | 样式 |
+| :--- | :--- |
+|Date			 | YYYY-MM-DD					 |
+|Time			 | HH:MM:SS.mmm					 |
+|DateTime		 | YYYY-MM-DD HH:MM:SS.mmm		 |
+|SmallDateTime	 | YYYY-MM-DD HH:MM:SS			 |
+|TimeStamp		 | 数字							 |
+
+
+# 设置星期1为每周的开始
+```sql
+set datefirst 1		--设置星期1为每周的开始
+```
+
+# 日期和时间样式
+
+```sql
+SELECT CONVERT(VARCHAR, CAST('2012-3-4 5:6:7.890' as DATETIME), nnn)
+```
+
+| nnn | 样式 | 结果 |
+| :--- | :--- | :--- |
+| 100 | MM  D YYYY  H:MMAM				 | 03  4 2012  5:06AM			|
+| 101 | MM/DD/YYYY						 | 03/04/2012					|
+| 102 | YYYY.MM.DD 					 | 2012.03.04					|
+| 103 | DD/MM/YYYY						 | 04/03/2012					|
+| 104 | DD.MM.YYYY						 | 04.03.2012					|
+| 105 | DD-MM-YYYY						 | 04-03-2012                   |
+| 106 | DD MM YYYY						 | 04 03 2012                   |
+| 107 | MM DD, YYYY					 | 03 04, 2012                  |
+| 108 | HH:MM:SS						 | 05:06:07                     |
+| 109 | MM  D YYYY  H:MM:SS:mmmAM		 | 03  4 2012  5:06:07:890AM    |
+| 110 | MM-DD-YYYY						 | 03-04-2012                   |
+| 111 | YYYY/MM/DD						 | 2012/03/04                   |
+| 112 | YYYYMMDD						 | 20120304                     |
+| 113 | DD MM YYYY HH:MM:SS:mmm		 | 04 03 2012 05:06:07:890      |
+| 114 | HH:MM:SS:mmm					 | 05:06:07:890                 |
+| 120 | YYYY-MM-DD HH:MM:SS			 | 2012-03-04 05:06:07          |
+| 121 | YYYY-MM-DD HH:MM:SS.mmm		 | 2012-03-04 05:06:07.890      |
+| 126 | YYYY-MM-DDTHH:MM:SS.mmm		 | 2012-03-04T05:06:07.890      |

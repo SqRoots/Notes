@@ -1,0 +1,68 @@
+<h1 id="学习与帮助">学习与帮助</h1>
+<ul>
+<li><a href="http://www.runoob.com/linux/linux-tutorial.html">学习网站：RUNOOB.COM</a></li>
+<li>有不会使用的命令，在命令后面加上<code>--help</code>，可以查看系统帮助</li>
+</ul>
+<h1 id="关机与重启">关机与重启</h1>
+<h2 id="关机">关机</h2>
+<ul>
+<li><code>shutdown -h now</code> 或 <code>halt</code> 或 <code>poweroff</code>：直接关机</li>
+<li><code>shutdown -h 20:16</code>：在指定时间关机</li>
+<li><code>shutdown -h 10</code>：10分钟后关机</li>
+</ul>
+<h2 id="重启">重启</h2>
+<ul>
+<li><code>shutdown -r now</code> 或 <code>reboot</code>：直接重启</li>
+</ul>
+<h1 id="服务管理">服务管理</h1>
+<ul>
+<li><code>service &lt;服务名称&gt; 空/start/stop/restart</code>：例如<code>service mysqld restart</code></li>
+<li><code>chkconfig --list</code>:服务列表，及每个服务的运行级别</li>
+<li><code>chkconfig &lt;服务名称&gt; on/off</code>：设置开机自动启动/关</li>
+</ul>
+<h1 id="用户">用户</h1>
+<ul>
+<li><code>users</code>：在线用户列表</li>
+<li><code>cat /etc/passwd</code>：所有用户列表</li>
+<li><code>cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F&quot;:&quot;'{pringt $|&quot;|&quot;$3&quot;|&quot;$4&quot;}'</code></li>
+</ul>
+<h1 id="硬件信息">硬件信息</h1>
+<h2 id="cpu">CPU</h2>
+<ul>
+<li><code>lscpu</code> ：CPU的基本信息</li>
+<li><code>cat /proc/cpuinfo</code> ：每个CPU的硬件信息（CPU的型号，主频等）</li>
+<li><a href="http://www.runoob.com/linux/linux-comm-top.html"><code>top</code></a> ：CPU的使用情况</li>
+<li><code>vmstat</code> ： 系统使用情况</li>
+</ul>
+<h2 id="内存">内存</h2>
+<ul>
+<li><code>free -m</code>：内存使用概况</li>
+<li><code>cat /proc/meminfo</code>：内存使用详情</li>
+<li><code>dmidecode -t memory</code>：内存硬件信息</li>
+</ul>
+<h2 id="磁盘">磁盘</h2>
+<ul>
+<li><code>lsblk</code>：硬盘和分区分布情况</li>
+<li><code>fdisk -l</code>：硬盘和分区的详细信息</li>
+</ul>
+<h2 id="网卡">网卡</h2>
+<ul>
+<li><code>lspci | grep -i 'eth'</code>：网卡硬件信息</li>
+<li><code>ifconfig -a</code> 或 <code>ip link show</code>：系统所有网络接口</li>
+<li><code>ethtool eth0</code>：网络接口<code>eth0</code>的详细信息</li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li><code>lspci</code>：pci信息，即主板所有硬件槽信息</li>
+<li><code>lspci -v</code> 或 <code>lspci -vv</code>：pci信息详细信息</li>
+<li><code>lscpi -t</code>：设备树</li>
+<li><code>dmidecode -t bios</code>：bios信息</li>
+<li><code>dmidecode -q</code>：所有有用信息</li>
+</ul>
+<h1 id="未分类">未分类</h1>
+<h2 id="自动挂载分区">自动挂载分区</h2>
+<p>在文件<code>/etc/fstab</code>最后添加一行： <code>/dev/sdb1    /home    ext3    defaults    0 0</code> 磁盘分区 要挂载的目录 文件系统</p>
+<h2 id="卸载图形界面">卸载图形界面</h2>
+<p>修改文件：<code>/etc/inittab</code> 找到<code>id:5:initdefault:</code>，修改为：<code>id:3:initdefault:</code>。让系统以文本界面启动。 注释掉<code>x:5:respawn:/etc/X11/prefdm -nodaemon</code>。</p>
+<p>然后分别运行下面的命令：</p>
+<p>`<code>yum groupremove &quot;X Window System&quot; yum groupremove &quot;GNOME Desktop Environment&quot;</code></p>

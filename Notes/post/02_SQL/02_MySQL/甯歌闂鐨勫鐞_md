@@ -1,0 +1,76 @@
+# 备份与还原
+
+* 官网文档：[7.4 Using mysqldump for Backups](http://dev.mysql.com/doc/refman/5.0/en/using-mysqldump.html)
+
+
+## 备份所有数据库
+```sql
+shell> mysqldump --all-databases > dump.sql
+```
+
+* 常用参数： `-u`，`-p`，`--events`，`--ignore-table=mysql.events`
+* 参考：[7.4.1 Dumping Data in SQL Format with mysqldump](http://dev.mysql.com/doc/refman/5.5/en/mysqldump-sql-format.html)
+
+## 还原所有数据库
+```sql
+shell> mysql < dump.sql
+```
+
+* 常用参数： `-u`，`-p`
+* 参考：[7.4.2 Reloading SQL-Format Backups](http://dev.mysql.com/doc/refman/5.5/en/reloading-sql-format-dumps.html)
+
+## 导出查询结果
+
+```sql
+mysql> select * from myTable into outfile 'FilePath';
+```
+上面的方法，需要对文件有写权限才能顺利导出。
+
+```sql
+shell> mysql -u... -p myDatabase -e"select * from myTable" > FilePath
+```
+
+
+# 用户管理（待整理）
+## 设置root密码
+方法1： 用SET PASSWORD命令
+```sql
+shell> mysql -u root
+mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpass');
+```
+
+方法2：用mysqladmin
+```sql
+　　shell> mysqladmin -u root password "newpass"
+
+　　-- 如果root已经设置过密码，采用如下方法
+　　shell> mysqladmin -u root password oldpass "newpass"
+```
+
+
+方法3： 用UPDATE直接编辑user表
+```sql
+　　shell> mysql -u root
+　　mysql> use mysql;
+　　mysql> UPDATE user SET Password = PASSWORD('newpass') WHERE user = 'root';
+　　mysql> FLUSH PRIVILEGES;
+```
+
+## 在丢失root密码的时候，可以这样
+```sql
+　　shell> mysqld_safe --skip-grant-tables
+　　shell> mysql -u root mysql
+　　mysql> UPDATE user SET password=PASSWORD("new password") WHERE user='root';
+　　mysql> FLUSH PRIVILEGES;
+```
+
+
+# 其它
+## 函数
+| 分类 | 函数 | 说明 |
+| :--- | :--- | :--- | :--- |
+| 时间 | `from_unixtime()` | Unix时间戳 --> 普通时间 |
+| 时间 | `unix_timestamp()` | 普通时间 --> Unix时间戳 |
+| IP | `inet_aton()` | IP --> bigint |
+| IP | `inet_ntoa()` | bigint --> IP |
+

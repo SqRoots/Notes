@@ -1,0 +1,167 @@
+<h1 id="常见的时期和时间函数">常见的时期和时间函数</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">GETDATE()</td>
+<td align="left">返回当前日期和时间</td>
+</tr>
+<tr class="even">
+<td align="left">DATEPART()</td>
+<td align="left">返回日期/时间的单独部分</td>
+</tr>
+<tr class="odd">
+<td align="left">DATEADD()</td>
+<td align="left">在日期中添加或减去指定的时间间隔</td>
+</tr>
+<tr class="even">
+<td align="left">DATEDIFF()</td>
+<td align="left">返回两个日期之间的时间</td>
+</tr>
+<tr class="odd">
+<td align="left">CONVERT()</td>
+<td align="left">用不同的格式显示日期/时间</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用的日期和时间格式">常用的日期和时间格式</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">类型</th>
+<th align="left">样式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Date</td>
+<td align="left">YYYY-MM-DD</td>
+</tr>
+<tr class="even">
+<td align="left">Time</td>
+<td align="left">HH:MM:SS.mmm</td>
+</tr>
+<tr class="odd">
+<td align="left">DateTime</td>
+<td align="left">YYYY-MM-DD HH:MM:SS.mmm</td>
+</tr>
+<tr class="even">
+<td align="left">SmallDateTime</td>
+<td align="left">YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr class="odd">
+<td align="left">TimeStamp</td>
+<td align="left">数字</td>
+</tr>
+</tbody>
+</table>
+<h1 id="设置星期1为每周的开始">设置星期1为每周的开始</h1>
+<pre class="sql"><code>set datefirst 1     --设置星期1为每周的开始</code></pre>
+<h1 id="日期和时间样式">日期和时间样式</h1>
+<pre class="sql"><code>SELECT CONVERT(VARCHAR, CAST(&#39;2012-3-4 5:6:7.890&#39; as DATETIME), nnn)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">nnn</th>
+<th align="left">样式</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">100</td>
+<td align="left">MM D YYYY H:MMAM</td>
+<td align="left">03 4 2012 5:06AM</td>
+</tr>
+<tr class="even">
+<td align="left">101</td>
+<td align="left">MM/DD/YYYY</td>
+<td align="left">03/04/2012</td>
+</tr>
+<tr class="odd">
+<td align="left">102</td>
+<td align="left">YYYY.MM.DD</td>
+<td align="left">2012.03.04</td>
+</tr>
+<tr class="even">
+<td align="left">103</td>
+<td align="left">DD/MM/YYYY</td>
+<td align="left">04/03/2012</td>
+</tr>
+<tr class="odd">
+<td align="left">104</td>
+<td align="left">DD.MM.YYYY</td>
+<td align="left">04.03.2012</td>
+</tr>
+<tr class="even">
+<td align="left">105</td>
+<td align="left">DD-MM-YYYY</td>
+<td align="left">04-03-2012</td>
+</tr>
+<tr class="odd">
+<td align="left">106</td>
+<td align="left">DD MM YYYY</td>
+<td align="left">04 03 2012</td>
+</tr>
+<tr class="even">
+<td align="left">107</td>
+<td align="left">MM DD, YYYY</td>
+<td align="left">03 04, 2012</td>
+</tr>
+<tr class="odd">
+<td align="left">108</td>
+<td align="left">HH:MM:SS</td>
+<td align="left">05:06:07</td>
+</tr>
+<tr class="even">
+<td align="left">109</td>
+<td align="left">MM D YYYY H:MM:SS:mmmAM</td>
+<td align="left">03 4 2012 5:06:07:890AM</td>
+</tr>
+<tr class="odd">
+<td align="left">110</td>
+<td align="left">MM-DD-YYYY</td>
+<td align="left">03-04-2012</td>
+</tr>
+<tr class="even">
+<td align="left">111</td>
+<td align="left">YYYY/MM/DD</td>
+<td align="left">2012/03/04</td>
+</tr>
+<tr class="odd">
+<td align="left">112</td>
+<td align="left">YYYYMMDD</td>
+<td align="left">20120304</td>
+</tr>
+<tr class="even">
+<td align="left">113</td>
+<td align="left">DD MM YYYY HH:MM:SS:mmm</td>
+<td align="left">04 03 2012 05:06:07:890</td>
+</tr>
+<tr class="odd">
+<td align="left">114</td>
+<td align="left">HH:MM:SS:mmm</td>
+<td align="left">05:06:07:890</td>
+</tr>
+<tr class="even">
+<td align="left">120</td>
+<td align="left">YYYY-MM-DD HH:MM:SS</td>
+<td align="left">2012-03-04 05:06:07</td>
+</tr>
+<tr class="odd">
+<td align="left">121</td>
+<td align="left">YYYY-MM-DD HH:MM:SS.mmm</td>
+<td align="left">2012-03-04 05:06:07.890</td>
+</tr>
+<tr class="even">
+<td align="left">126</td>
+<td align="left">YYYY-MM-DDTHH:MM:SS.mmm</td>
+<td align="left">2012-03-04T05:06:07.890</td>
+</tr>
+</tbody>
+</table>

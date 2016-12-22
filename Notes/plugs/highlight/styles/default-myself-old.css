@@ -1,0 +1,114 @@
+/*
+
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+
+*/
+
+/*自定义－开始*/
+pre.sql code.hljs .hljs-keyword{color: #00f;}
+pre.sql code.hljs .hljs-string{color: #f00;}
+
+/*Mathematica*/
+pre.mathematica code.hljs{font-weight: bold;font-family:'Courier New';font-size:14px;color:#002cc3;}
+pre.mathematica code.hljs .hljs-comment{color: #999999;}
+pre.mathematica code.hljs .hljs-number{color:#000;}
+
+pre.mathematica code.hljs .hljs-keyword,
+pre.mathematica code.hljs .hljs-attribute,
+pre.mathematica code.hljs .hljs-selector-tag,
+pre.mathematica code.hljs .hljs-meta-keyword,
+pre.mathematica code.hljs .hljs-doctag,
+pre.mathematica code.hljs .hljs-name {
+	color: #000;
+}
+
+pre.mathematica code.hljs .hljs-type,
+pre.mathematica code.hljs .hljs-string,
+
+pre.mathematica code.hljs .hljs-selector-id,
+pre.mathematica code.hljs .hljs-selector-class,
+pre.mathematica code.hljs .hljs-quote,
+pre.mathematica code.hljs .hljs-template-tag,
+pre.mathematica code.hljs .hljs-deletion {
+  color: #666666;
+}
+
+/*自定义－结束*/
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+
+  font-size:14px;
+  font-family:"Consolas", "Bitstream Vera Sans Mono", "Courier New", "Courier", "monospace" ;
+}
+
+.hljs,
+.hljs-subst {
+  color: #444;
+}
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-name {
+	color: #0000ff;
+}
+
+.hljs-built_in,
+.hljs-literal,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #1F811F;
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #BC6060;
+}
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #880000;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.hljs-comment {
+  color: #888888;
+}
+
+.hljs-meta {
+  color: #2B6EA1;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+
+

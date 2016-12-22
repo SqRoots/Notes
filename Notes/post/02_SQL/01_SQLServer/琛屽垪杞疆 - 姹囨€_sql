@@ -1,0 +1,13 @@
+SELECT 
+	 BuyTime
+	,CASE WHEN 金额类型 = 'Client_APP_BuyMoney' THEN 'A'
+		WHEN 金额类型 = 'Client_PC_BuyMoney' THEN 'P'
+		WHEN 金额类型 = 'Client_IOS_BuyMoney' THEN 'I'
+		WHEN 金额类型 = 'Client_M_BuyMoney' THEN 'M'
+		END 金额类型
+	,金额
+FROM [DB_Analysis].[dbo].[Daily_Collect_Data] 
+	AS a UNPIVOT (金额 FOR 金额类型 IN ( Client_APP_BuyMoney,Client_IOS_BuyMoney,Client_M_BuyMoney,Client_PC_BuyMoney )) 
+	as t
+WHERE BuyTime >='2015-01-01' AND BuyTime <'2015-02-01'
+ORDER BY BuyTime,金额类型

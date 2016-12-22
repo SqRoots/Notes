@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>笔记-老李</title>
+	<meta http-equiv="Content-Type" content="text/myhtml; charset=UTF-8" />		<!--HTML信息-->
+	<link rel="stylesheet" href="./fonts/font-awesome/css/font-awesome.min.css">	<!--页脚社交网络链接字体-->
+	<link rel="stylesheet" href="./css/biji.css">								<!--CSS-->
+
+	<link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">		<!--加载书签Logo-->
+	<script type="text/javascript" src="./js/jquery-2.2.0.min.js"></script>		<!--JQuery-->
+	<script type="text/javascript" src="./js/biji.js"></script>					<!--BiJi.js-->
+
+
+	
+	<script type="text/javascript" async src="./plugs/MathJax-master/MathJax.js?config=TeX-AMS_CHTML"></script>		<!--MathJax 本地-->
+	<!--
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>		
+	-->																										<!--MathJax 在线-->
+	<script type="text/x-mathjax-config">																	<!--MathJax 配置-开始-->
+	  MathJax.Hub.Config({
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+		  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+		  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		  processEscapes: true},
+		"HTML-CSS": { availableFonts: ["TeX"] },
+		menuSettings: { zoom: "Click" }
+	  });
+	</script>																								<!--MathJax 配置-结束-->
+	
+<!--	
+	<link rel="stylesheet" href="./plugs/highlight/styles/default-myself.css">
+-->
+	<script async="" 		src= "./plugs/google-code-prettify/prettify.js"></script>
+	
+	<!--
+	<script async="" 		src= "./plugs/google-code-prettify/mma/lang-mma.js"></script>
+	-->
+	
+	<link rel="stylesheet"	href="./plugs/google-code-prettify/mma/prettify-mma.css">
+</head>
+
+<body>
+<!--container:Begin-->
+<div class="container">
+
+<!--c-head:Begin-->
+	<div class="c-head" id="c-head">
+		<div class="headlogo">
+			<a href="http://laoli.cm"><img src="./imgs/logo.png" alt="Logo" width="35px" height="35px"/></a>
+		</div>
+		<div class="headtext">
+			<center onmouseover="colorShow()" onmouseout="colorClose()">颜色</center>
+			<center onclick="$('div.content').load('./post/00_Home/00_Home.html?'+Math.random(),function(){afterLoad('./post/00_Home/')});document.body.scrollTop=0;">关于</center>
+		</div>
+	</div>
+	
+	<div id="backgroudColors" onmouseover="colorShow()" onmouseout="colorClose()">
+		<center onclick="$('div#content').css('background','rgba(255,255,255,0.5)');setCookie('background','rgba(255,255,255,0.5)',1000);">纯白</center>
+		<center onclick="$('#content').css('background','rgba(243,243,243,0.5)');setCookie('background','rgba(243,243,243,0.5)',1000);">浅灰</center>
+		<center onclick="$('#content').css('background','rgba(231,231,231,0.5)');setCookie('background','rgba(231,231,231,0.5)',1000);">深灰</center>
+	</div>
+<!--c-head:End-->
+
+
+
+<!--c-body:Begin-->
+	<div class="c-body" id="c-body">
+		<div class="ContentsTree" id="ContentsTree">
+			<div class="i-head">
+				<i aria-hidden="true" class="icon-folder-open" onclick="openAll();"></i><span onclick="openAll();" class="i-mouseover" style="padding-left:6px">展开</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<i aria-hidden="true" class="icon-folder-close" onclick="closeAll();"></i><span onclick="closeAll();" class="i-mouseover" style="padding-left:6px">折叠</span>
+			</div>
+			<hr/>
+			<div class="i-items" id="i-items"></div>
+		</div>
+		
+		<div class="content" id="content"></div>
+		
+		<div class="ArticleContents" id="ArticleContents"></div>
+	</div>
+<!--c-body:End-->
+
+<!--c-foot:Begin-->
+	<div class="c-foot" id="c-foot">
+		<div class='c-foot-up-blank'></div>
+	</div>
+<!--c-foot:End-->
+
+</div>
+<!--container:End-->
+</body>
+</html>

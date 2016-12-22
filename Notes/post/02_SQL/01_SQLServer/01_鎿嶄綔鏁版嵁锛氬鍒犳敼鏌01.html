@@ -1,0 +1,63 @@
+<h1 id="增">增</h1>
+<h2 id="创建表">创建表</h2>
+<pre class="sql"><code>    Create Table 表名(
+        列名1 数据类型 约束条件1 约束条件2 ... ,
+        列名2 数据类型 约束条件1 约束条件2 ... ,
+        列名3 数据类型 约束条件1 约束条件2 ... ,
+        )</code></pre>
+<ul>
+<li>常用约束条件有：<code>Not NULL</code>，<code>Unique</code>，<code>Primary Key</code>，<code>Foreign Key</code>，<code>Check，Default</code></li>
+<li>撤销约束条件：<code>Alter Table 表名 Drop Constraint 列名</code></li>
+<li>撤销Default约束：<code>Alter Table 表名 Alter Column 列名 Drop Default</code></li>
+</ul>
+<h2 id="插入数据">插入数据</h2>
+<pre class="sql"><code>    Insert Into 表名 [Values] (值1, 值2, ...)
+    Insert Into 表名 (列1, 列2, ...) [Values] (值1, 值2, ...)
+    Insert Into 表名 (列1, 列2, ...)  SELECT 列1, 列2, ... From 表2</code></pre>
+<h2 id="添加列">添加列</h2>
+<pre class="sql"><code>    Alter Table 表名 Add 列名 数据类型 Default 默认值 with values</code></pre>
+<h2 id="复制表">复制表</h2>
+<pre class="sql"><code>    Select 列1, 列2, ... Into 表名2 From 表名1</code></pre>
+<h1 id="删">删</h1>
+<h2 id="删除表">删除表</h2>
+<pre class="sql"><code>    Drop Table 表名</code></pre>
+<p>一般在删除表之前还需要检查所要删除的表是否存在，以免警告信息。</p>
+<pre class="sql"><code>IF OBJECT_ID(&#39;#temp&#39;) IS NOT NULL Drop Table #temp;
+--删除表
+
+IF OBJECT_ID(&#39;TEMPDB.DBO.#temp&#39;) IS NOT NULL Drop Table #temp;
+--删除临时表</code></pre>
+<h2 id="删除数据">删除数据</h2>
+<pre class="sql"><code>    Delete From 表名 Where 某列=某值 and ...
+    --无Where子句里删除表中所有数据，但保留表结构、属性、约束、索引等。
+
+    Truncate Table 表名
+    --删除表中所有数据，但保留表结构、属性、约束、索引等。速度比`Delete`快。</code></pre>
+<h2 id="删除列">删除列</h2>
+<pre class="sql"><code>    Alter Table 表名 Drop Column 列名</code></pre>
+<h1 id="改">改</h1>
+<h2 id="修改数据">修改数据</h2>
+<pre class="sql"><code>    Update 表名 Set 列1=值1, 列2=值2, ... Where 某列=某值 and ...
+    Update 表名 Set 列1=值1, 列2=值2, ... [From 某数据集] Where 某列=某值 and ...</code></pre>
+<h2 id="修改列的数据类型">修改列的数据类型</h2>
+<pre class="sql"><code>    Alter Table 表名 Alter Column 列名 数据类型</code></pre>
+<h2 id="修改列名">修改列名</h2>
+<pre class="sql"><code>    USE DBName;
+    GO
+    EXEC sp_rename &#39;TableName.OldColumnName&#39;, &#39;NewColumnName&#39;, &#39;COLUMN&#39;;
+    GO</code></pre>
+<h1 id="查">查</h1>
+<h1 id="其它">其它</h1>
+<h2 id="ip地址分隔">IP地址分隔</h2>
+<pre class="sql"><code>    DECLARE @IP VARCHAR(100)
+    SET @IP=&#39;211.151.122.57&#39;
+    SELECT PARSENAME(@IP,4),PARSENAME(@IP,3),PARSENAME(@IP,2),PARSENAME(@IP,1)</code></pre>
+<h2 id="while循环">While循环</h2>
+<pre class="sql"><code>    declare @k int,@n int
+    set @k=1
+    set @n=3
+    while @k&lt;=@n
+        begin
+            select @k
+            set @k=@k+1
+        end</code></pre>

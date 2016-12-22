@@ -1,0 +1,16 @@
+GETDATE() 	返回当前日期和时间
+DATEPART() 	返回日期/时间的单独部分
+DATEADD() 	在日期中添加或减去指定的时间间隔
+DATEDIFF() 	返回两个日期之间的时间
+CONVERT() 	用不同的格式显示日期/时间
+
+
+Date	格式 YYYY-MM-DD
+DateTime	格式: YYYY-MM-DD HH:MM:SS
+SmallDateTime	格式: YYYY-MM-DD HH:MM:SS
+TimeStamp	格式: 唯一的数字
+
+Convert(Date,某DateTime [,120])
+
+
+set datefirst 1		设置星期1为每周的开始星期
